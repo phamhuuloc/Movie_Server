@@ -5,5 +5,6 @@ namespace Movie_Server.Services {
 
     public interface IUserServices {
        Task< List<UserModel>> getAllUsers();
+       Task<UserModel> getUserById(int id);
     }
 }

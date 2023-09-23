@@ -17,5 +17,14 @@ namespace Movie_Server.Controllers {
              return Ok(data);
        }
        
+        [HttpGet("GetById")]
+       public async Task<IActionResult> getById(int id) {
+             var data =  await this.services.getUserById(id);
+             if(data.Username == null) {
+                return NotFound();
+             }
+             return Ok(data);
+       }
+       
     }
 }
