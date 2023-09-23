@@ -14,6 +14,7 @@ namespace Movie_Server.Container {
             this._context = context;
             this._mapper = (Mapper?)mapper;
         }
+        // get all user
         public async Task<List<UserModel>>getAllUsers()
         {
             List<UserModel>  _response = new List<UserModel>();
@@ -23,7 +24,16 @@ namespace Movie_Server.Container {
             }
             return _response;
         }
+        // get  user by id
+        public async Task<UserModel> getUserById(int id)
+        {
+            UserModel _response = new UserModel();
+            var data =  await this._context.Users.FindAsync(id);
+            if(data != null){
+                _response = _mapper.Map<User, UserModel>(data);
+            }
+            return _response;
 
-        
+        }
     }
 }
