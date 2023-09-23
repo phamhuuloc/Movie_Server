@@ -1,11 +1,16 @@
+using Movie_Server.Repos;
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+// connection string used for the database
+var connectionString = builder.Configuration.GetConnectionString("MovieServer");
+builder.Services.AddDbContext<MovieserverContext>(options => {
+     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
 
 var app = builder.Build();
 
