@@ -1,4 +1,4 @@
-using Movie_Server.Repos;
+using Movie_Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Movie_Server.Services;
 using Movie_Server.Container;
@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(); 
 // connection string used for the database
 builder.Services.AddTransient<IUserServices,UserServices> ();
 var connectionString = builder.Configuration.GetConnectionString("Movie_Server");

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
+using Movie_Server.Models;
 using Movie_Server.Services;
 // using Org.BouncyCastle.Asn1.Iana;
 
@@ -26,5 +27,11 @@ namespace Movie_Server.Controllers {
              return Ok(data);
        }
        
+       [HttpPost("Create")]
+       public async Task<IActionResult> createNewUser(UserModel user) {
+             var data =  await this.services.createNewUser(user);
+             return Ok(data);
+       }
+
     }
 }

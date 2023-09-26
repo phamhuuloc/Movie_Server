@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Movie_Server.Repos;
+namespace Movie_Server.Database;
 
 public partial class UserVoucher
 {
-    public int Id { get; set; }
+    public string Id { get; set; } = null!;
 
-    public int UvUserId { get; set; }
+    public string UvUserId { get; set; } = null!;
 
-    public int UvVoucherId { get; set; }
+    public string UvVoucherId { get; set; } = null!;
 
     public DateTime CreateAt { get; set; }
 

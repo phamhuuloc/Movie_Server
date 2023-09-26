@@ -1,6 +1,7 @@
 namespace Movie_Server.Models {
       public class UserModel {
-        public int Id { get; set; }
+
+        public string Id { get; set; } = null!;
 
         public string? Username { get; set; }
 

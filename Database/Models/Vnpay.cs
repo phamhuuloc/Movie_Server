@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Movie_Server.Repos;
+namespace Movie_Server.Database;
 
 public partial class Vnpay
 {
-    public int VnpayId { get; set; }
+    public string VnpayId { get; set; } = null!;
 
     public string? VnpAmount { get; set; }
 

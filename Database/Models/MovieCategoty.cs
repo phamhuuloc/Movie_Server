@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Movie_Server.Repos;
+namespace Movie_Server.Database;
 
 public partial class MovieCategoty
 {
-    public int Id { get; set; }
+    public string Id { get; set; } = null!;
 
-    public int MvMovieId { get; set; }
+    public string MvMovieId { get; set; } = null!;
 
-    public int MvCateId { get; set; }
+    public string MvCateId { get; set; } = null!;
 
     public DateTime CreateAt { get; set; }
 

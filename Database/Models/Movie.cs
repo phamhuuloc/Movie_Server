@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Movie_Server.Repos;
+namespace Movie_Server.Database;
 
 public partial class Movie
 {
-    public int Id { get; set; }
+    public string Id { get; set; } = null!;
 
-    public int SupplierId { get; set; }
+    public string SupplierId { get; set; } = null!;
 
     public string Title { get; set; } = null!;
 

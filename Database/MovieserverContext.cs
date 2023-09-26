@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Movie_Server.Repos;
+namespace Movie_Server.Database;
 
 public partial class MovieserverContext : DbContext
 {
@@ -42,7 +42,8 @@ public partial class MovieserverContext : DbContext
     public virtual DbSet<Voucher> Vouchers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       => optionsBuilder.UseMySql("server=127.0.0.1;database=movieserver;user=root;password=123456789", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.33-mysql"));
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseMySql("server=127.0.0.1;database=movieserver;uid=root;pwd=123456789", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.33-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -57,7 +58,7 @@ public partial class MovieserverContext : DbContext
             entity.ToTable("categories");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .HasMaxLength(50)
                 .HasColumnName("id");
             entity.Property(e => e.CateName)
                 .HasMaxLength(255)
@@ -76,7 +77,7 @@ public partial class MovieserverContext : DbContext
             entity.ToTable("lists");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .HasMaxLength(50)
                 .HasColumnName("id");
             entity.Property(e => e.CreateAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
@@ -104,14 +105,18 @@ public partial class MovieserverContext : DbContext
             entity.HasIndex(e => e.LmMovieId, "lm_movie_id");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .HasMaxLength(50)
                 .HasColumnName("id");
             entity.Property(e => e.CreateAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("create_at");
-            entity.Property(e => e.LmListId).HasColumnName("lm_list_id");
-            entity.Property(e => e.LmMovieId).HasColumnName("lm_movie_id");
+            entity.Property(e => e.LmListId)
+                .HasMaxLength(50)
+                .HasColumnName("lm_list_id");
+            entity.Property(e => e.LmMovieId)
+                .HasMaxLength(50)
+                .HasColumnName("lm_movie_id");
 
             entity.HasOne(d => d.LmList).WithMany(p => p.ListMovies)
                 .HasForeignKey(d => d.LmListId)
@@ -131,7 +136,7 @@ public partial class MovieserverContext : DbContext
             entity.HasIndex(e => e.SupplierId, "supplier_id");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .HasMaxLength(50)
                 .HasColumnName("id");
             entity.Property(e => e.Clicked).HasColumnName("clicked");
             entity.Property(e => e.CreateAt)
@@ -152,7 +157,9 @@ public partial class MovieserverContext : DbContext
                 .HasColumnName("isSeries");
             entity.Property(e => e.Limit).HasColumnName("_limit");
             entity.Property(e => e.Price).HasColumnName("price");
-            entity.Property(e => e.SupplierId).HasColumnName("supplier_id");
+            entity.Property(e => e.SupplierId)
+                .HasMaxLength(50)
+                .HasColumnName("supplier_id");
             entity.Property(e => e.Title)
                 .HasColumnType("text")
                 .HasColumnName("title");
@@ -180,14 +187,18 @@ public partial class MovieserverContext : DbContext
             entity.HasIndex(e => e.MvMovieId, "mv_movie_id");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .HasMaxLength(50)
                 .HasColumnName("id");
             entity.Property(e => e.CreateAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("create_at");
-            entity.Property(e => e.MvCateId).HasColumnName("mv_cate_id");
-            entity.Property(e => e.MvMovieId).HasColumnName("mv_movie_id");
+            entity.Property(e => e.MvCateId)
+                .HasMaxLength(50)
+                .HasColumnName("mv_cate_id");
+            entity.Property(e => e.MvMovieId)
+                .HasMaxLength(500)
+                .HasColumnName("mv_movie_id");
 
             entity.HasOne(d => d.MvCate).WithMany(p => p.MovieCategoties)
                 .HasForeignKey(d => d.MvCateId)
@@ -209,7 +220,7 @@ public partial class MovieserverContext : DbContext
             entity.HasIndex(e => e.RUserId, "r_user_id");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .HasMaxLength(50)
                 .HasColumnName("id");
             entity.Property(e => e.CreateAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
@@ -219,11 +230,15 @@ public partial class MovieserverContext : DbContext
             entity.Property(e => e.RContent)
                 .HasColumnType("text")
                 .HasColumnName("r_content");
-            entity.Property(e => e.RMovieId).HasColumnName("r_movie_id");
+            entity.Property(e => e.RMovieId)
+                .HasMaxLength(50)
+                .HasColumnName("r_movie_id");
             entity.Property(e => e.RNumberStar)
                 .HasDefaultValueSql("'0'")
                 .HasColumnName("r_number_star");
-            entity.Property(e => e.RUserId).HasColumnName("r_user_id");
+            entity.Property(e => e.RUserId)
+                .HasMaxLength(50)
+                .HasColumnName("r_user_id");
 
             entity.HasOne(d => d.RMovie).WithMany(p => p.Ratings)
                 .HasForeignKey(d => d.RMovieId)
@@ -241,7 +256,7 @@ public partial class MovieserverContext : DbContext
             entity.ToTable("suppliers");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .HasMaxLength(50)
                 .HasColumnName("id");
             entity.Property(e => e.CreateAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
@@ -268,7 +283,7 @@ public partial class MovieserverContext : DbContext
             entity.ToTable("users");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .HasMaxLength(50)
                 .HasColumnName("id");
             entity.Property(e => e.CreateAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
@@ -318,14 +333,18 @@ public partial class MovieserverContext : DbContext
             entity.HasIndex(e => e.UfUserId, "uf_user_id");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .HasMaxLength(50)
                 .HasColumnName("id");
             entity.Property(e => e.CreateAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("create_at");
-            entity.Property(e => e.UfMovieId).HasColumnName("uf_movie_id");
-            entity.Property(e => e.UfUserId).HasColumnName("uf_user_id");
+            entity.Property(e => e.UfMovieId)
+                .HasMaxLength(50)
+                .HasColumnName("uf_movie_id");
+            entity.Property(e => e.UfUserId)
+                .HasMaxLength(50)
+                .HasColumnName("uf_user_id");
 
             entity.HasOne(d => d.UfMovie).WithMany(p => p.UserFavourites)
                 .HasForeignKey(d => d.UfMovieId)
@@ -347,14 +366,18 @@ public partial class MovieserverContext : DbContext
             entity.HasIndex(e => e.UmUserId, "um_user_id");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .HasMaxLength(50)
                 .HasColumnName("id");
             entity.Property(e => e.CreateAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("create_at");
-            entity.Property(e => e.UmMovieId).HasColumnName("um_movie_id");
-            entity.Property(e => e.UmUserId).HasColumnName("um_user_id");
+            entity.Property(e => e.UmMovieId)
+                .HasMaxLength(50)
+                .HasColumnName("um_movie_id");
+            entity.Property(e => e.UmUserId)
+                .HasMaxLength(50)
+                .HasColumnName("um_user_id");
 
             entity.HasOne(d => d.UmMovie).WithMany(p => p.UserMovies)
                 .HasForeignKey(d => d.UmMovieId)
@@ -376,14 +399,18 @@ public partial class MovieserverContext : DbContext
             entity.HasIndex(e => e.UvVoucherId, "uv_voucher_id");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .HasMaxLength(50)
                 .HasColumnName("id");
             entity.Property(e => e.CreateAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("create_at");
-            entity.Property(e => e.UvUserId).HasColumnName("uv_user_id");
-            entity.Property(e => e.UvVoucherId).HasColumnName("uv_voucher_id");
+            entity.Property(e => e.UvUserId)
+                .HasMaxLength(50)
+                .HasColumnName("uv_user_id");
+            entity.Property(e => e.UvVoucherId)
+                .HasMaxLength(50)
+                .HasColumnName("uv_voucher_id");
 
             entity.HasOne(d => d.UvUser).WithMany(p => p.UserVouchers)
                 .HasForeignKey(d => d.UvUserId)
@@ -401,7 +428,7 @@ public partial class MovieserverContext : DbContext
             entity.ToTable("vnpay");
 
             entity.Property(e => e.VnpayId)
-                .ValueGeneratedNever()
+                .HasMaxLength(50)
                 .HasColumnName("vnpay_id");
             entity.Property(e => e.CreateAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
@@ -440,7 +467,7 @@ public partial class MovieserverContext : DbContext
             entity.ToTable("vouchers");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .HasMaxLength(50)
                 .HasColumnName("id");
             entity.Property(e => e.CreateAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
