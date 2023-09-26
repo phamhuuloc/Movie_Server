@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Movie_Server.Repos;
+namespace Movie_Server.Database;
 
 public partial class UserMovie
 {
-    public int Id { get; set; }
+    public string Id { get; set; } = null!;
 
-    public int UmUserId { get; set; }
+    public string UmUserId { get; set; } = null!;
 
-    public int UmMovieId { get; set; }
+    public string UmMovieId { get; set; } = null!;
 
     public DateTime CreateAt { get; set; }
 
