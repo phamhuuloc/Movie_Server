@@ -39,10 +39,9 @@ namespace Movie_Server.Container {
             return _response;
 
         }
-        
-        public async Task<ApiResponse> createNewUser(UserModel user)
+       // create a new user 
+        public async Task<ApiResponse> createNewUser(UserCreateModel user)
         {
-
             ApiResponse _response = new ApiResponse();
             try {
             // chec if email regeistered
@@ -68,8 +67,7 @@ namespace Movie_Server.Container {
                     _response.responseMessage = "Phone number is not valid";
                     return _response;
                 }
-                
-                User _user = this._mapper.Map<UserModel, User>(user);
+                User _user = this._mapper.Map<UserCreateModel, User>(user);
                  // Tạo một Guid mới
                 _user.Id = Guid.NewGuid().ToString(); 
                 await this._context.Users.AddAsync(_user);
@@ -87,8 +85,31 @@ namespace Movie_Server.Container {
             
         }
         return _response;
-
- 
     }
+    // update user info
+    public async Task<ApiResponse> updateUser(UserUpdateModel userData,string id) {
+
+        ApiResponse _response = new ApiResponse();
+        try {
+        var _user  = await this._context.Users.FindAsync(id);
+        if(_user != null){
+            _user.Username = userData.Username; 
+            _user.Password = userData.Password; 
+            _user.ProfilePic = userData.ProfilePic; 
+            _user.WalletBalance = userData.WalletBalance; 
+            _user.Phone = userData.Phone; 
+            _user.IsAdmin = userData.IsAdmin; 
+           await this._context.SaveChangesAsync();
+           _response.responseCode = 200;
+           _response.responseMessage = "Update Successfully";
+           _response.data = null;
+           return _response;
+        }
+        }catch(Exception ex){
+            _response.responseCode = 500;
+            _response.responseMessage = ex.Message;  
+        }
+        return _response;
+    }     
     }
 }

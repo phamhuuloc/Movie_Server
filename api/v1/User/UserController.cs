@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.VisualBasic;
 using Movie_Server.Models;
 using Movie_Server.Services;
@@ -28,10 +29,14 @@ namespace Movie_Server.Controllers {
        }
        
        [HttpPost("Create")]
-       public async Task<IActionResult> createNewUser(UserModel user) {
+       public async Task<IActionResult> createNewUser(UserCreateModel user) {
              var data =  await this.services.createNewUser(user);
              return Ok(data);
        }
-
+      [HttpPut("Update")] 
+      public async Task<IActionResult> updateUser(UserUpdateModel user,string id) {
+             var data =  await this.services.updateUser(user,id);
+             return Ok(data);
+       }
     }
 }
