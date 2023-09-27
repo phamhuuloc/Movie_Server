@@ -8,6 +8,7 @@ using Movie_Server.Models;
 using Movie_Server.Database;
 using Movie_Server.Services;
 using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Cors;
 
 namespace Movie_Server.Container {
     public class UserServices : IUserServices{
@@ -18,9 +19,9 @@ namespace Movie_Server.Container {
             this._context = context;
             this._mapper = (Mapper?)mapper;
             this._logger = logger;
-
         }
         // get all user
+        // [EnableCors("corsplicy1")]
         public async Task<List<UserModel>>getAllUsers()
         {
             _logger.LogInformation("Get All Users Starting");

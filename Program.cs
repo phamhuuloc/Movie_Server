@@ -11,6 +11,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(); 
+
+// builder.Services.AddCors(p=>p.AddPolicy("corspolicy",build=> {
+//     build.WithOrigins("https://domain.com").AllowAnyMethod().AllowAnyHeader();
+// }));
+
+builder.Services.AddCors(p=>p.AddDefaultPolicy(build=> {
+    build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
 // connection string used for the database
 builder.Services.AddTransient<IUserServices,UserServices> ();
 var connectionString = builder.Configuration.GetConnectionString("Movie_Server");
@@ -33,6 +41,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseSerilogRequestLogging();
+
+app.UseCors();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
