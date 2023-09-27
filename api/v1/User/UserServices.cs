@@ -13,14 +13,17 @@ namespace Movie_Server.Container {
     public class UserServices : IUserServices{
         private readonly   MovieserverContext _context;
         private readonly Mapper _mapper;
-        public   UserServices (MovieserverContext context , IMapper mapper) {
+        private readonly ILogger<UserServices> _logger;
+        public   UserServices (MovieserverContext context , IMapper mapper, ILogger<UserServices> logger) {
             this._context = context;
             this._mapper = (Mapper?)mapper;
+            this._logger = logger;
 
         }
         // get all user
         public async Task<List<UserModel>>getAllUsers()
         {
+            _logger.LogInformation("Get All Users Starting");
             List<UserModel>  _response = new List<UserModel>();
             var data =  await this._context.Users.ToListAsync();
             if(data != null){
@@ -31,6 +34,8 @@ namespace Movie_Server.Container {
         // get  user by id
         public async Task<UserModel> getUserById(int id)
         {
+
+            _logger.LogInformation("Get  Users  By ID Starting");
             UserModel _response = new UserModel();
             var data =  await this._context.Users.FindAsync(id);
             if(data != null){
@@ -42,6 +47,8 @@ namespace Movie_Server.Container {
        // create a new user 
         public async Task<ApiResponse> createNewUser(UserCreateModel user)
         {
+
+            _logger.LogInformation("Create A  New User Starting");
             ApiResponse _response = new ApiResponse();
             try {
             // chec if email regeistered
@@ -79,6 +86,7 @@ namespace Movie_Server.Container {
             }
         
         }catch(Exception ex) {
+            _logger.LogError(ex.Message);
             Console.WriteLine(ex.InnerException.Message);
             _response.responseCode = 500;
             _response.responseMessage = ex.Message;
@@ -89,6 +97,8 @@ namespace Movie_Server.Container {
     // update user info
     public async Task<ApiResponse> updateUser(UserUpdateModel userData,string id) {
 
+
+        _logger.LogInformation("Update User Info Starting");
         ApiResponse _response = new ApiResponse();
         try {
         var _user  = await this._context.Users.FindAsync(id);
@@ -106,6 +116,7 @@ namespace Movie_Server.Container {
            return _response;
         }
         }catch(Exception ex){
+            _logger.LogError(ex.Message);
             _response.responseCode = 500;
             _response.responseMessage = ex.Message;  
         }
