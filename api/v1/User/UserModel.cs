@@ -27,4 +27,28 @@ namespace Movie_Server.Models {
 
 
       }
+      public class UserCreateModel {
+        public string? Username { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+        public double? WalletBalance { get; set; }
+        public string? Phone { get; set; }
+        public bool? IsAdmin { get; set; }
+
+      }
+
+      public class UserUpdateModel {
+        public string? Username { get; set; }
+
+        public string Password { get; set; } = null!;
+
+        public string? ProfilePic { get; set; }
+
+        public double? WalletBalance { get; set; }
+
+        public string? Phone { get; set; }
+
+        public bool? IsAdmin { get; set; }
+
+      }
 }
