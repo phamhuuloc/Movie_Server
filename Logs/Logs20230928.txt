@@ -1,0 +1,158 @@
+[2023-09-28 07:42:51.433 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-09-28 07:42:52.606 +07:00  INF]  Get All Users Starting
+[2023-09-28 07:42:53.893 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2463.6912 ms
+[2023-09-28 07:43:48.588 +07:00  INF]  HTTP POST /api/v1/User/Create responded 400 in 56.6992 ms
+[2023-09-28 07:45:13.041 +07:00  INF]  HTTP POST /api/v1/User/Create responded 400 in 19.9468 ms
+[2023-09-28 07:46:42.505 +07:00  INF]  HTTP POST /api/v1/User/Create responded 400 in 12.0791 ms
+[2023-09-28 07:46:46.488 +07:00  INF]  HTTP POST /api/v1/User/Create responded 400 in 2.3730 ms
+[2023-09-28 07:47:19.739 +07:00  INF]  HTTP POST /api/v1/User/Create responded 400 in 9.5328 ms
+[2023-09-28 07:47:48.030 +07:00  INF]  Update User Info Starting
+[2023-09-28 07:47:48.238 +07:00  INF]  HTTP PUT /api/v1/User/Update responded 200 in 244.9486 ms
+[2023-09-28 07:48:33.230 +07:00  INF]  HTTP PUT /api/v1/User/Update responded 400 in 3.1324 ms
+[2023-09-28 08:58:54.628 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:58:54.719 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 176.1820 ms
+[2023-09-28 08:58:55.660 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:58:55.665 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 5.7377 ms
+[2023-09-28 08:58:56.597 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:58:56.600 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 4.5711 ms
+[2023-09-28 08:58:57.249 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:58:57.252 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.7035 ms
+[2023-09-28 08:58:57.759 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:58:57.762 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 4.2894 ms
+[2023-09-28 08:58:58.198 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:58:58.200 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.8091 ms
+[2023-09-28 08:58:58.609 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:58:58.611 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.4700 ms
+[2023-09-28 08:58:59.006 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:58:59.009 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 4.1758 ms
+[2023-09-28 08:58:59.368 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:58:59.370 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.7653 ms
+[2023-09-28 08:58:59.666 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:58:59.668 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.6012 ms
+[2023-09-28 08:58:59.853 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:58:59.856 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.1564 ms
+[2023-09-28 08:59:00.043 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:00.045 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.6305 ms
+[2023-09-28 08:59:00.219 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:00.221 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.5259 ms
+[2023-09-28 08:59:00.399 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:00.401 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.9566 ms
+[2023-09-28 08:59:00.582 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:00.584 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.4251 ms
+[2023-09-28 08:59:00.760 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:00.762 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.6438 ms
+[2023-09-28 08:59:01.160 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:01.162 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.4958 ms
+[2023-09-28 08:59:01.533 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:01.535 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.5392 ms
+[2023-09-28 08:59:01.748 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:01.750 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.8296 ms
+[2023-09-28 08:59:01.935 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:01.937 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.6113 ms
+[2023-09-28 08:59:02.118 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:02.120 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.7405 ms
+[2023-09-28 08:59:02.408 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:02.410 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.9607 ms
+[2023-09-28 08:59:02.575 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:02.577 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.4642 ms
+[2023-09-28 08:59:03.145 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:03.148 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.1326 ms
+[2023-09-28 08:59:29.684 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:29.690 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 12.6974 ms
+[2023-09-28 08:59:30.843 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:30.845 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.5596 ms
+[2023-09-28 08:59:31.465 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:31.467 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.5169 ms
+[2023-09-28 08:59:31.982 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:31.984 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.8882 ms
+[2023-09-28 08:59:32.392 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:32.394 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.3567 ms
+[2023-09-28 08:59:32.832 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:32.835 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.7315 ms
+[2023-09-28 08:59:33.074 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:33.076 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.8412 ms
+[2023-09-28 08:59:33.305 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:33.307 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.5302 ms
+[2023-09-28 08:59:33.479 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:33.480 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.2382 ms
+[2023-09-28 08:59:33.664 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:33.666 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.3187 ms
+[2023-09-28 08:59:33.872 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:33.898 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 26.5536 ms
+[2023-09-28 08:59:34.085 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:34.087 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 32.7378 ms
+[2023-09-28 08:59:34.212 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:34.213 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.2310 ms
+[2023-09-28 08:59:34.400 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:34.403 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.7057 ms
+[2023-09-28 08:59:34.578 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:34.580 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.2803 ms
+[2023-09-28 08:59:34.766 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:34.769 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.8960 ms
+[2023-09-28 08:59:34.945 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:34.947 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.0316 ms
+[2023-09-28 08:59:36.927 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:36.929 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.5538 ms
+[2023-09-28 08:59:37.389 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:37.391 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.4638 ms
+[2023-09-28 08:59:37.577 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:37.579 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.2024 ms
+[2023-09-28 08:59:37.765 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:37.768 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.5915 ms
+[2023-09-28 08:59:37.946 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:37.948 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.0980 ms
+[2023-09-28 08:59:38.123 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:38.126 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.4180 ms
+[2023-09-28 08:59:38.302 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:38.305 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.0530 ms
+[2023-09-28 08:59:38.483 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:38.509 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.1638 ms
+[2023-09-28 08:59:38.674 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:38.676 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.5938 ms
+[2023-09-28 08:59:38.865 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:38.868 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.6606 ms
+[2023-09-28 08:59:39.020 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:39.022 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.4964 ms
+[2023-09-28 08:59:39.210 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:39.212 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.5115 ms
+[2023-09-28 08:59:39.412 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:39.415 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.6019 ms
+[2023-09-28 08:59:39.582 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:39.584 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.8306 ms
+[2023-09-28 08:59:39.778 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:39.780 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.4968 ms
+[2023-09-28 08:59:39.970 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:39.994 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 23.9287 ms
+[2023-09-28 08:59:40.138 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:40.140 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.5962 ms
+[2023-09-28 08:59:40.346 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:40.348 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.5756 ms
+[2023-09-28 08:59:40.543 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:40.556 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 13.6983 ms
+[2023-09-28 08:59:40.716 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:40.718 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.3501 ms
+[2023-09-28 08:59:40.912 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:40.914 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.4402 ms
+[2023-09-28 08:59:41.121 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:41.124 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.4760 ms
+[2023-09-28 08:59:41.315 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:41.318 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.9549 ms
+[2023-09-28 08:59:41.491 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:41.494 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.9251 ms
+[2023-09-28 08:59:41.668 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:41.670 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.5265 ms
+[2023-09-28 08:59:41.849 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:41.851 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.5830 ms
+[2023-09-28 08:59:42.032 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:42.034 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.0569 ms
+[2023-09-28 08:59:42.204 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:42.207 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 4.5764 ms
+[2023-09-28 08:59:42.382 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:42.384 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.0370 ms
+[2023-09-28 08:59:42.549 +07:00  INF]  Get All Users Starting
+[2023-09-28 08:59:42.551 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 2.7728 ms
+[2023-09-28 09:03:12.181 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-09-28 09:03:12.541 +07:00  INF]  Get All Users Starting
+[2023-09-28 09:03:13.588 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 1413.5081 ms
+[2023-09-28 09:03:22.304 +07:00  INF]  Get All Users Starting
+[2023-09-28 09:03:22.344 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 48.3964 ms

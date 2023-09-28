@@ -87,8 +87,7 @@ namespace Movie_Server.Container {
             }
         
         }catch(Exception ex) {
-            _logger.LogError(ex.Message);
-            Console.WriteLine(ex.InnerException.Message);
+            _logger.LogWarning(ex.Message);
             _response.responseCode = 500;
             _response.responseMessage = ex.Message;
             

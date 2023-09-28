@@ -5,6 +5,7 @@ using Movie_Server.Container;
 using AutoMapper;
 using Movie_Server.Helper;
 using Serilog;
+using Microsoft.AspNetCore.RateLimiting;
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
@@ -19,6 +20,15 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors(p=>p.AddDefaultPolicy(build=> {
     build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
 }));
+// rate limit
+builder.Services.AddRateLimiter(options => {
+    options.AddFixedWindowLimiter(policyName:"fixedwindow",opt=> {
+       opt.Window = TimeSpan.FromSeconds(10); 
+       opt.PermitLimit = 1;
+       opt.QueueLimit = 0;
+       opt.QueueProcessingOrder = System.Threading.RateLimiting.QueueProcessingOrder.OldestFirst;
+    });
+});
 // connection string used for the database
 builder.Services.AddTransient<IUserServices,UserServices> ();
 var connectionString = builder.Configuration.GetConnectionString("Movie_Server");
@@ -40,6 +50,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseRateLimiter();
+
 app.UseSerilogRequestLogging();
 
 app.UseCors();
