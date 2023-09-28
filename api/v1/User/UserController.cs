@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.VisualBasic;
 using Movie_Server.Models;
@@ -6,6 +7,8 @@ using Movie_Server.Services;
 // using Org.BouncyCastle.Asn1.Iana;
 
 namespace Movie_Server.Controllers {
+
+    [EnableRateLimiting("fixedwindow")]
     [Route("api/v1/[controller]")]
     [ApiController]
     public class UserController: ControllerBase {
