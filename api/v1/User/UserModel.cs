@@ -19,7 +19,7 @@ namespace Movie_Server.Models {
 
         public string? Phone { get; set; }
 
-        public bool? IsAdmin { get; set; }
+        public bool?  IsActive { get; set; }
 
         public string? FaceId { get; set; }
 
@@ -33,7 +33,7 @@ namespace Movie_Server.Models {
         public string? Password { get; set; }
         public double? WalletBalance { get; set; }
         public string? Phone { get; set; }
-        public bool? IsAdmin { get; set; }
+        public bool? IsActive { get; set; }
 
       }
 
@@ -48,7 +48,7 @@ namespace Movie_Server.Models {
 
         public string? Phone { get; set; }
 
-        public bool? IsAdmin { get; set; }
+        public bool? IsActive  { get; set; }
 
       }
 }

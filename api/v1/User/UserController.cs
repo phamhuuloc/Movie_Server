@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
@@ -8,6 +9,8 @@ using Movie_Server.Services;
 
 namespace Movie_Server.Controllers {
 
+
+    [Authorize]
     [EnableRateLimiting("fixedwindow")]
     [Route("api/v1/[controller]")]
     [ApiController]
@@ -16,7 +19,7 @@ namespace Movie_Server.Controllers {
        public UserController(IUserServices services) {
         this.services = services;
        }
-       [HttpGet("GetAll")]
+       [HttpGet("GetAll") ]
        public async Task<IActionResult> Get() {
              var data =  await this.services.getAllUsers();
              return Ok(data);

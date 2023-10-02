@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Movie_Server.Database;
+namespace Movie_Server.Database.Models;
 
 public partial class MovieserverContext : DbContext
 {
@@ -26,6 +26,8 @@ public partial class MovieserverContext : DbContext
     public virtual DbSet<MovieCategoty> MovieCategoties { get; set; }
 
     public virtual DbSet<Rating> Ratings { get; set; }
+
+    public virtual DbSet<Refreshtoken> Refreshtokens { get; set; }
 
     public virtual DbSet<Supplier> Suppliers { get; set; }
 
@@ -249,6 +251,23 @@ public partial class MovieserverContext : DbContext
                 .HasConstraintName("ratings_ibfk_1");
         });
 
+        modelBuilder.Entity<Refreshtoken>(entity =>
+        {
+            entity.HasKey(e => e.UserId).HasName("PRIMARY");
+
+            entity.ToTable("refreshtoken");
+
+            entity.Property(e => e.UserId)
+                .HasMaxLength(50)
+                .HasColumnName("user_id");
+            entity.Property(e => e.RefreshToke)
+                .HasMaxLength(500)
+                .HasColumnName("refresh_toke");
+            entity.Property(e => e.TokenId)
+                .HasMaxLength(50)
+                .HasColumnName("token_id");
+        });
+
         modelBuilder.Entity<Supplier>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
@@ -295,9 +314,9 @@ public partial class MovieserverContext : DbContext
             entity.Property(e => e.FaceId)
                 .HasColumnType("text")
                 .HasColumnName("face_id");
-            entity.Property(e => e.IsAdmin)
-                .HasDefaultValueSql("'0'")
-                .HasColumnName("isAdmin");
+            entity.Property(e => e.IsActive)
+                .HasDefaultValueSql("'1'")
+                .HasColumnName("isActive");
             entity.Property(e => e.MoneySpended)
                 .HasDefaultValueSql("'0'")
                 .HasColumnName("money_spended");
@@ -313,6 +332,10 @@ public partial class MovieserverContext : DbContext
             entity.Property(e => e.ProfilePic)
                 .HasColumnType("text")
                 .HasColumnName("profilePic");
+            entity.Property(e => e.Role)
+                .HasMaxLength(255)
+                .HasDefaultValueSql("'user'")
+                .HasColumnName("role");
             entity.Property(e => e.Username)
                 .HasMaxLength(255)
                 .HasDefaultValueSql("_utf8mb4\\'user\\'")

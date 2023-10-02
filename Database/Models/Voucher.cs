@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Movie_Server.Database;
+namespace Movie_Server.Database.Models;
 
 public partial class Voucher
 {
