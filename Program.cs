@@ -6,6 +6,11 @@ using AutoMapper;
 using Movie_Server.Helper;
 using Serilog;
 using Microsoft.AspNetCore.RateLimiting;
+using Movie_Server.Models;
+using Movie_Server.Database.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
@@ -24,13 +29,15 @@ builder.Services.AddCors(p=>p.AddDefaultPolicy(build=> {
 builder.Services.AddRateLimiter(options => {
     options.AddFixedWindowLimiter(policyName:"fixedwindow",opt=> {
        opt.Window = TimeSpan.FromSeconds(10); 
-       opt.PermitLimit = 1;
+       opt.PermitLimit = 100;
        opt.QueueLimit = 0;
        opt.QueueProcessingOrder = System.Threading.RateLimiting.QueueProcessingOrder.OldestFirst;
     });
 });
 // connection string used for the database
 builder.Services.AddTransient<IUserServices,UserServices> ();
+builder.Services.AddTransient<IAuthorizeServices,AuthorizeServices> ();
+
 var connectionString = builder.Configuration.GetConnectionString("Movie_Server");
 builder.Services.AddDbContext<MovieserverContext>(options => {
      options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
@@ -40,9 +47,19 @@ var automapper =  new MapperConfiguration(item => item.AddProfile(new AutoMapper
 IMapper mapper = automapper.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
+builder.Services.AddAuthentication().AddJwtBearer(options => {
+    options.TokenValidationParameters = new TokenValidationParameters {
+       ValidateIssuerSigningKey = true,
+       ValidateAudience = false,
+       ValidateIssuer = false,
+       IssuerSigningKey =  new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("Appsettings:Token").Value))
+    };
+});
+
 builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
 
-var app = builder.Build();
+
+ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

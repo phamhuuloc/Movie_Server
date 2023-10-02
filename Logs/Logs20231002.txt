@@ -1,0 +1,14 @@
+[2023-10-02 09:25:22.377 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-02 09:25:26.039 +07:00  INF]  User Information: d88bf737-e981-415b-8894-fbd77072fde0
+[2023-10-02 09:25:26.640 +07:00  INF]  HTTP POST /login responded 200 in 4269.4458 ms
+[2023-10-02 09:25:44.798 +07:00  INF]  Get All Users Starting
+[2023-10-02 09:25:44.887 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 108.8478 ms
+[2023-10-02 09:27:02.748 +07:00  INF]  Get All Users Starting
+[2023-10-02 09:27:02.836 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 91.3974 ms
+[2023-10-02 09:29:57.408 +07:00  INF]  HTTP GET /api/v1//GetAll responded 404 in 0.1395 ms
+[2023-10-02 09:30:18.437 +07:00  INF]  HTTP GET /api/v1//GetAll responded 404 in 0.0251 ms
+[2023-10-02 09:30:45.479 +07:00  INF]  HTTP GET /api/v1/GetAll responded 404 in 0.0301 ms
+[2023-10-02 09:31:16.237 +07:00  INF]  Get All Users Starting
+[2023-10-02 09:31:16.258 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 43.0856 ms
+[2023-10-02 09:31:37.595 +07:00  INF]  Get All Users Starting
+[2023-10-02 09:31:37.601 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 10.0956 ms

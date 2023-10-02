@@ -9,6 +9,7 @@ using Movie_Server.Database;
 using Movie_Server.Services;
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Cors;
+using Movie_Server.Database.Models;
 
 namespace Movie_Server.Container {
     public class UserServices : IUserServices{
@@ -48,7 +49,7 @@ namespace Movie_Server.Container {
        // create a new user 
         public async Task<ApiResponse> createNewUser(UserCreateModel user)
         {
-
+            
             _logger.LogInformation("Create A  New User Starting");
             ApiResponse _response = new ApiResponse();
             try {
@@ -108,7 +109,7 @@ namespace Movie_Server.Container {
             _user.ProfilePic = userData.ProfilePic; 
             _user.WalletBalance = userData.WalletBalance; 
             _user.Phone = userData.Phone; 
-            _user.IsAdmin = userData.IsAdmin; 
+            _user.IsActive = userData.IsActive; 
            await this._context.SaveChangesAsync();
            _response.responseCode = 200;
            _response.responseMessage = "Update Successfully";
