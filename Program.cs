@@ -38,6 +38,7 @@ builder.Services.AddRateLimiter(options => {
 builder.Services.AddTransient<IUserServices,UserServices> ();
 builder.Services.AddTransient<IAuthorizeServices,AuthorizeServices> ();
 builder.Services.AddTransient<ISupplierServices,SupplierServices> ();
+builder.Services.AddTransient<IMovieServices,MovieServices> ();
 
 var connectionString = builder.Configuration.GetConnectionString("Movie_Server");
 builder.Services.AddDbContext<MovieserverContext>(options => {

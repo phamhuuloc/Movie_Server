@@ -6,7 +6,8 @@ using Movie_Server.Models;
 using Movie_Server.Services;
 
 namespace Movie_Server.Controllers {
-    // [EnableRateLimiting("fixedwindow")]
+    [Authorize]
+    [EnableRateLimiting("fixedwindow")]
     [Route("api/v1/[controller]")]
     [ApiController]
 
