@@ -5,6 +5,7 @@ using Movie_Server.Models;
 
 namespace Movie_Server.Services {
     public  interface IMovieServices {
-        Task<ApiResponse> createNewMovie(MovieCreateModel movie); 
+        Task<ApiResponse> createNewMovie(MovieModel movie); 
+        Task<ApiResponse> updateMovieInfo(MovieModel movie,string id); 
     }
 }

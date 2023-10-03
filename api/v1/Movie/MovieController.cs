@@ -13,8 +13,14 @@ namespace Movie_Server.Controllers {
             this.services = services;
         }
         [HttpPost("Create") ]
-        public async Task<IActionResult> createMovies(MovieCreateModel movie) {
+        public async Task<IActionResult> createMovies(MovieModel movie) {
               var data =  await this.services.createNewMovie(movie);
+              return Ok(data);
+        }
+
+        [HttpPut("Update") ]
+        public async Task<IActionResult> updateMovieInfo(MovieModel movie, string id) {
+              var data =  await this.services.updateMovieInfo(movie,id);
               return Ok(data);
         }
 
