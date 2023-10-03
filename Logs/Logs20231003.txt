@@ -1,0 +1,12 @@
+[2023-10-03 08:29:06.763 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-03 08:29:09.413 +07:00  INF]  User Information: d88bf737-e981-415b-8894-fbd77072fde0
+[2023-10-03 08:29:09.578 +07:00  INF]  HTTP POST /login responded 200 in 2816.9834 ms
+[2023-10-03 08:29:33.329 +07:00  INF]  Create A  New Supplier Starting
+[2023-10-03 08:29:33.508 +07:00  INF]  HTTP POST /api/v1/Supplier/Create responded 200 in 212.2782 ms
+[2023-10-03 08:30:17.032 +07:00  INF]  Create A  New Supplier Starting
+[2023-10-03 08:30:17.125 +07:00  INF]  HTTP POST /api/v1/Supplier/Create responded 200 in 97.6401 ms
+[2023-10-03 08:30:33.882 +07:00  INF]  Create A  New Supplier Starting
+[2023-10-03 08:30:34.119 +07:00  INF]  HTTP POST /api/v1/Supplier/Create responded 200 in 240.0603 ms
+[2023-10-03 09:01:22.402 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-03 09:01:22.883 +07:00  INF]  Update supplier starting
+[2023-10-03 09:01:23.960 +07:00  INF]  HTTP POST /api/v1/Supplier/Update responded 200 in 1567.5740 ms
