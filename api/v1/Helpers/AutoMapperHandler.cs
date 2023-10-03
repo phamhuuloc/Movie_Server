@@ -54,6 +54,9 @@ namespace Movie_Server.Helper {
                 dest => dest.IsActive,
                 opt => opt.MapFrom(src => src.IsActive)
             );
+
+        CreateMap<Supplier, SupplierModel>() ;
+
         CreateMap<SupplierCreateModel, Supplier>()
             .ForMember(
                 dest => dest.SlName, 

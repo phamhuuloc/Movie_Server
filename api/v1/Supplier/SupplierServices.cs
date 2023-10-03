@@ -21,6 +21,25 @@ namespace Movie_Server.Container  {
             this._mapper = (Mapper?)mapper;
             this._logger = logger;
         }
+        public async Task<ApiResponse> getAllSuppliers() {
+            ApiResponse _response = new ApiResponse();
+             try { 
+                _logger.LogInformation("Get All Suppliers Starting");
+                List<SupplierModel>  listSuppliers = new List<SupplierModel>();
+                var data = await this._context.Suppliers.ToListAsync();
+                if( data != null) {
+                     _response.responseCode = 200;
+                     _response.responseMessage  = "Get All Supplier Successfully";
+                     _response.data = _mapper.Map<List<Supplier> , List<SupplierModel>>(data);
+                     return _response;
+                }
+
+             }catch (Exception ex) {
+                _response.responseCode = 500;
+                _response.responseMessage = ex.Message;
+             }
+             return _response;
+        }
        public async Task<ApiResponse> createNewSupplier(SupplierCreateModel supplier) {
             _logger.LogInformation("Create A  New Supplier Starting");   
             ApiResponse _response = new ApiResponse(); 

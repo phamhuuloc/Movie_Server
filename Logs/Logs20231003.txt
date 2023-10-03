@@ -7,3 +7,6 @@
 [2023-10-03 08:30:17.125 +07:00  INF]  HTTP POST /api/v1/Supplier/Create responded 200 in 97.6401 ms
 [2023-10-03 08:30:33.882 +07:00  INF]  Create A  New Supplier Starting
 [2023-10-03 08:30:34.119 +07:00  INF]  HTTP POST /api/v1/Supplier/Create responded 200 in 240.0603 ms
+[2023-10-03 09:01:22.402 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-03 09:01:22.883 +07:00  INF]  Update supplier starting
+[2023-10-03 09:01:23.960 +07:00  INF]  HTTP POST /api/v1/Supplier/Update responded 200 in 1567.5740 ms

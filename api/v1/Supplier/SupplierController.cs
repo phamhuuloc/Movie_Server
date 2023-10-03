@@ -15,6 +15,11 @@ namespace Movie_Server.Controllers {
        public SupplierController(ISupplierServices services) {
         this.services = services;
        }
+        [HttpGet("GetAll") ]
+       public async Task<IActionResult> getAllSuppliers() {
+             var data =  await this.services.getAllSuppliers();
+             return Ok(data);
+       }
  
        [HttpPost("Create")]
        public async Task<IActionResult> createNewSupplier(SupplierCreateModel supplier) {
