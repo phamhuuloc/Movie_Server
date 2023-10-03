@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace Movie_Server.Models {
-    public class MovieCreateModel {
+    public class MovieModel {
     
     [Required(ErrorMessage ="Supplier Id is required")]
     public string SupplierId { get; set; } = null!;
@@ -27,7 +27,7 @@ namespace Movie_Server.Models {
     [Required(ErrorMessage ="Year is required")]
     public int Year { get; set; }
 
-    [Required(ErrorMessage ="Limit is required")]
+    [Required(ErrorMessage = "Limit is required")]
     public int Limit { get; set; }
 
     [Required(ErrorMessage ="Price is required")]

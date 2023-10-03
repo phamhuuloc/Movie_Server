@@ -729,3 +729,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving 
 [2023-10-03 15:18:35.555 +07:00  INF]  HTTP POST /api/v1/Movie/Create responded 400 in 26.5490 ms
 [2023-10-03 15:46:55.857 +07:00  INF]  HTTP POST /api/v1/Movie/Create responded 400 in 114.1485 ms
 [2023-10-03 15:47:25.286 +07:00  INF]  HTTP POST /api/v1/Movie/Create responded 400 in 5.0268 ms
+[2023-10-03 15:48:16.141 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-03 15:48:25.223 +07:00  INF]  User Information: d88bf737-e981-415b-8894-fbd77072fde0
+[2023-10-03 15:48:25.805 +07:00  INF]  HTTP POST /login responded 200 in 9667.5318 ms
+[2023-10-03 15:48:56.698 +07:00  INF]  HTTP POST /api/v1/Movie/Create responded 400 in 210.3082 ms
