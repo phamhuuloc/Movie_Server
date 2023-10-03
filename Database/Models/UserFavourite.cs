@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Movie_Server.Repos;
+namespace Movie_Server.Database.Models;
 
 public partial class UserFavourite
 {
-    public int Id { get; set; }
+    public string Id { get; set; } = null!;
 
-    public int UfUserId { get; set; }
+    public string UfUserId { get; set; } = null!;
 
-    public int UfMovieId { get; set; }
+    public string UfMovieId { get; set; } = null!;
 
     public DateTime CreateAt { get; set; }
 

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Movie_Server.Repos;
+namespace Movie_Server.Database.Models;
 
 public partial class User
 {
-    public int Id { get; set; }
+    public string Id { get; set; } = null!;
 
     public string? Username { get; set; }
 
@@ -23,11 +23,13 @@ public partial class User
 
     public string? Phone { get; set; }
 
-    public bool? IsAdmin { get; set; }
+    public bool? IsActive { get; set; }
 
     public string? FaceId { get; set; }
 
     public DateTime CreateAt { get; set; }
+
+    public string Role { get; set; } = null!;
 
     public virtual ICollection<Rating> Ratings { get; set; } = new List<Rating>();
 

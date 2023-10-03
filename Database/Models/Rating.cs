@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Movie_Server.Repos;
+namespace Movie_Server.Database.Models;
 
 public partial class Rating
 {
-    public int Id { get; set; }
+    public string Id { get; set; } = null!;
 
     public int? RNumberStar { get; set; }
 
-    public int RUserId { get; set; }
+    public string RUserId { get; set; } = null!;
 
-    public int RMovieId { get; set; }
+    public string RMovieId { get; set; } = null!;
 
     public double Price { get; set; }
 

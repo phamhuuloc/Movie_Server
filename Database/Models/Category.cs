@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Movie_Server.Repos;
+namespace Movie_Server.Database.Models;
 
 public partial class Category
 {
-    public int Id { get; set; }
+    public string Id { get; set; } = null!;
 
     public string CateName { get; set; } = null!;
 
