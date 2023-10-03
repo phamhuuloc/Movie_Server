@@ -83,6 +83,45 @@ namespace Movie_Server.Helper {
                 dest => dest.SlAddress,
                 opt => opt.MapFrom(src => src.SlAddress)
             );
+        CreateMap<MovieCreateModel , Movie>()
+            .ForMember(
+                dest => dest.SupplierId,
+                opt => opt.MapFrom(src => src.SupplierId)
+            ).ForMember(
+                dest => dest.Title,
+                opt => opt.MapFrom(src => src.Title)
+            ).ForMember(
+                dest => dest.Desc,
+                opt => opt.MapFrom(src => src.Desc)
+            ).ForMember(
+                dest => dest.Img,
+                opt => opt.MapFrom(src => src.Img)
+            ).ForMember(
+                dest => dest.ImgSm,
+                opt => opt.MapFrom(src => src.ImgSm)
+            ).ForMember(
+                dest => dest.Trailer,
+                opt => opt.MapFrom(src => src.Trailer)
+            ).ForMember(
+                dest => dest.Video,
+                opt => opt.MapFrom(src => src.Video)
+            ).ForMember(
+                dest => dest.Year,
+                opt => opt.MapFrom(src => src.Year)
+            ).ForMember(
+                dest => dest.Limit,
+                opt => opt.MapFrom(src => src.Limit)
+            ).ForMember(
+                dest => dest.Price,
+                opt => opt.MapFrom(src => src.Price)
+            ).ForMember(
+                dest => dest.Clicked,
+                opt => opt.MapFrom(src => src.Clicked)
+            ).ForMember(
+                dest => dest.IsSeries,
+                opt => opt.MapFrom(src => src.IsSeries)
+            );
+            
        }
     }
 }

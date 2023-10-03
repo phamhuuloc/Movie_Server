@@ -10,3 +10,48 @@
 [2023-10-03 09:01:22.402 +07:00  WRN]  Failed to determine the https port for redirect.
 [2023-10-03 09:01:22.883 +07:00  INF]  Update supplier starting
 [2023-10-03 09:01:23.960 +07:00  INF]  HTTP POST /api/v1/Supplier/Update responded 200 in 1567.5740 ms
+[2023-10-03 09:35:39.919 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-03 09:35:40.311 +07:00  INF]  Get All Suppliers Starting
+[2023-10-03 09:35:41.407 +07:00  INF]  HTTP GET /api/v1/Supplier/GetAll responded 200 in 1493.5846 ms
+[2023-10-03 09:40:09.635 +07:00  INF]  Get All Suppliers Starting
+[2023-10-03 09:40:09.678 +07:00  INF]  HTTP GET /api/v1/Supplier/GetAll responded 200 in 47.5560 ms
+[2023-10-03 13:55:55.269 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-03 13:55:57.851 +07:00  INF]  User Information: d88bf737-e981-415b-8894-fbd77072fde0
+[2023-10-03 13:55:58.010 +07:00  INF]  HTTP POST /login responded 200 in 2745.4193 ms
+[2023-10-03 13:58:27.603 +07:00  INF]  HTTP GET /api/v1/Supplier/GetAll responded 401 in 11.0035 ms
+[2023-10-03 13:58:58.694 +07:00  INF]  Get All Suppliers Starting
+[2023-10-03 13:58:58.809 +07:00  INF]  HTTP GET /api/v1/Supplier/GetAll responded 200 in 144.3400 ms
+[2023-10-03 14:02:43.106 +07:00  INF]  HTTP POST /api/v1/Movie/Create responded 401 in 1.5476 ms
+[2023-10-03 14:02:50.323 +07:00  INF]  HTTP POST /api/v1/Movie/Create responded 401 in 2.1329 ms
+[2023-10-03 14:03:06.801 +07:00  ERR]  HTTP POST /api/v1/Movie/Create responded 500 in 23.9452 ms
+System.InvalidOperationException: Unable to resolve service for type 'Movie_Server.Services.IMovieServices' while attempting to activate 'Movie_Server.Controllers.MovieController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method177(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2023-10-03 14:03:06.815 +07:00  ERR]  An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Movie_Server.Services.IMovieServices' while attempting to activate 'Movie_Server.Controllers.MovieController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method177(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
