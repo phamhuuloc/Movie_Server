@@ -6,6 +6,7 @@ using Movie_Server.Helper;
 using Movie_Server.Models;
 using Movie_Server.Services;
 using System.Runtime.CompilerServices;
+using Microsoft.EntityFrameworkCore;
 
 namespace Movie_Server.Container {
     public  class MovieServices : IMovieServices {
@@ -17,6 +18,25 @@ namespace Movie_Server.Container {
             this._mapper = (Mapper?)mapper;
             this._logger = logger;
         }   
+
+        public async  Task<ApiResponse> getAllMovies () {
+            ApiResponse _response = new ApiResponse();
+            try{
+               _logger.LogInformation("Get All Movies Starting");
+               var data = await this._context.Movies.ToListAsync();
+               if( data != null) {
+                    _response.responseCode = 200;
+                    _response.responseMessage  = "Get All Movies Successfully";
+                    _response.data = _mapper.Map<List<Movie> , List<MovieModel>>(data);
+                    return _response;
+               }
+            }catch(Exception ex) {
+                _response.responseCode = 500;
+                _response.responseMessage = ex.Message;
+            }
+            return _response;
+            
+        }
         public async Task<ApiResponse> createNewMovie (MovieModel movie) {
             _logger.LogInformation("Create Movie Starting");
             ApiResponse _response = new ApiResponse();
@@ -69,5 +89,6 @@ namespace Movie_Server.Container {
             return _response;
             
         }
+        
     }
 }
