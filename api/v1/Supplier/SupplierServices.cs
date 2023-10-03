@@ -61,5 +61,33 @@ namespace Movie_Server.Container  {
             }
             return _response;
        } 
+       public  async Task<ApiResponse> updateSupplierInfo (SupplierUpdateModel supplier, string id) {
+          _logger.LogInformation("Update supplier starting");
+            ApiResponse _response = new ApiResponse(); 
+          try{
+                bool isValidPhoneNumber = Regex.IsMatch(supplier.SlPhone, @"^[0-9]{10}$");
+                var SupplierInfo =  await this._context.Suppliers.FindAsync(id);
+                if(isValidPhoneNumber == false) {
+                    _response.responseCode = 400;
+                    _response.responseMessage = "Phone number is not valid";
+                   return _response; 
+                }
+                else if (SupplierInfo != null){
+                    Supplier _supplier = _mapper.Map<SupplierUpdateModel, Supplier>(supplier);
+                    await this._context.SaveChangesAsync();
+                    _response.responseCode = 200;
+                    _response.responseMessage = "Update Successfully";
+                    _response.data = null;
+                    return _response;
+                }
+          }catch(Exception ex){
+                _response.responseCode = 500;
+                _response.responseMessage = ex.Message;
+                _response.data = null;
+
+          }
+          return _response;
+       }
+       
     }
 }
