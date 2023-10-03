@@ -21,6 +21,11 @@ namespace Movie_Server.Controllers {
              var data =  await this.services.createNewSupplier(supplier);
              return Ok(data);
        }
+    [HttpPost("Update")]
+       public async Task<IActionResult> updateSupplierInfo(SupplierUpdateModel supplier, string id) {
+             var data =  await this.services.updateSupplierInfo(supplier, id);
+             return Ok(data);
+       }
 
 
    } 
