@@ -125,6 +125,29 @@ namespace Movie_Server.Helper {
                 dest => dest.IsSeries,
                 opt => opt.MapFrom(src => src.IsSeries)
             );
+
+            CreateMap<VoucherModel, Voucher>()
+            .ForMember(
+                dest => dest.Image, 
+                opt => opt.MapFrom(src => src.Image)
+            ).ForMember(
+                dest => dest.SupplierName, 
+                opt => opt.MapFrom(src => src.SupplierName)
+            ).ForMember(
+                dest => dest.PercentDiscount, 
+                opt => opt.MapFrom(src => src.PercentDiscount)
+            ).ForMember(
+                dest => dest.Description,
+                opt => opt.MapFrom(src => src.Description)
+            ).ForMember(
+                dest => dest.PointCost,
+                opt => opt.MapFrom(src => src.PointCost)
+            ).ForMember(
+                dest => dest.IsActive,
+                opt => opt.MapFrom(src => src.IsActive)
+            );
+ 
+
             
        }
     }
