@@ -34,7 +34,7 @@ namespace Movie_Server.Container {
             return _response;
         }
         // get  user by id
-        public async Task<UserModel> getUserById(int id)
+        public async Task<UserModel> getUserById(string id)
         {
 
             _logger.LogInformation("Get  Users  By ID Starting");

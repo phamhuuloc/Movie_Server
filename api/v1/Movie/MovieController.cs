@@ -17,6 +17,11 @@ namespace Movie_Server.Controllers {
               var data =  await this.services.getAllMovies();
               return Ok(data);
         }
+        [HttpGet("GetById") ]
+        public async Task<IActionResult> getMovieById(string id) {
+              var data =  await this.services.getMovieById( id);
+              return Ok(data);
+        }
         [HttpPost("Create") ]
         public async Task<IActionResult> createMovies(MovieModel movie) {
               var data =  await this.services.createNewMovie(movie);
