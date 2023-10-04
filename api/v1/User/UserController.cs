@@ -26,7 +26,7 @@ namespace Movie_Server.Controllers {
        }
        
         [HttpGet("GetById")]
-       public async Task<IActionResult> getById(int id) {
+       public async Task<IActionResult> getById(string id) {
              var data =  await this.services.getUserById(id);
              if(data.Username == null) {
                 return NotFound();

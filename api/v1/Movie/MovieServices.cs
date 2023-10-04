@@ -37,6 +37,54 @@ namespace Movie_Server.Container {
             return _response;
             
         }
+        public async Task<ApiResponse> getMovieById (string id) {
+            ApiResponse _response = new ApiResponse();
+            try{
+            _logger.LogInformation("Get Movie By ID Starting");
+            var data = await this._context.Movies.FindAsync(id);
+            MovieModel movieInfo = _mapper.Map<MovieModel>(data);
+            if(movieInfo == null){
+                _response.responseCode = 404;
+                _response.responseMessage = "Movie Not Found";
+                return _response;
+            }else{
+
+            
+           // get rating content of user for movie 
+            var getRatings= from rating in _context.Ratings
+                        join user in _context.Users on rating.RUserId equals user.Id
+                        where rating.RMovieId  == id // Điều kiện join bảng
+                       select new {
+                            userProfilePic = user.ProfilePic,
+                            userName = user.Username,
+                            ratingStar = rating.RNumberStar,
+                            ratingContent = rating.RContent,
+                            ratingTime = rating.CreateAt
+                       };
+            // get atribute of movie
+            var getAttributeOfMovie =  from  _movieCategoties  in _context.MovieCategoties
+                                       join categories in _context.Categories on _movieCategoties.MvCateId equals categories.Id
+                                       where _movieCategoties.MvMovieId == id
+                                       select new {
+                                           categoriesName = categories.CateName
+                                       };
+            // Execute query to get information
+            var ratingsOfMovie = await getRatings.ToListAsync();
+            var atributeOfMovie = await getAttributeOfMovie.ToListAsync();
+
+            _response.responseCode = 200;
+            _response.responseMessage = "Get Movie By ID Successfully";
+            _response.data = new {movieInfo, moveAtribute = atributeOfMovie,ratings = ratingsOfMovie}; // Trả về thông tin phim từ thuộc tính Movie trong kết quả
+            return _response;
+           }     
+            }catch(Exception ex){
+                _response.responseCode = 500;
+                _response.responseMessage = "Get Movie By ID Failed";
+
+            }
+            return _response; //TODO: Add result
+
+        }
         public async Task<ApiResponse> createNewMovie (MovieModel movie) {
             _logger.LogInformation("Create Movie Starting");
             ApiResponse _response = new ApiResponse();

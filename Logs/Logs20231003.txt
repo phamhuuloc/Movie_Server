@@ -740,3 +740,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving 
 [2023-10-03 16:25:14.475 +07:00  INF]  Update Movie Starting
 [2023-10-03 16:25:14.803 +07:00  INF]  HTTP PUT /api/v1/Movie/Update responded 200 in 334.3296 ms
 [2023-10-03 16:25:28.523 +07:00  INF]  HTTP PUT /api/v1/Movie/Update responded 400 in 13.3113 ms
+[2023-10-03 16:51:27.321 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-03 16:51:27.376 +07:00  INF]  HTTP GET /api/v1/Movie/GetALL responded 401 in 62.0141 ms
+[2023-10-03 16:51:48.541 +07:00  INF]  Get All Movies Starting
+[2023-10-03 16:51:49.624 +07:00  INF]  HTTP GET /api/v1/Movie/GetALL responded 200 in 1365.5633 ms

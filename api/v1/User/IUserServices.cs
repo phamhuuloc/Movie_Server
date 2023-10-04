@@ -6,7 +6,7 @@ namespace Movie_Server.Services {
 
     public interface IUserServices {
        Task< List<UserModel>> getAllUsers();
-       Task<UserModel> getUserById(int id);
+       Task<UserModel> getUserById(string id);
        Task<ApiResponse> createNewUser(UserCreateModel user);
        Task<ApiResponse> updateUser(UserUpdateModel user,string id);
     }
