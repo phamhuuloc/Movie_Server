@@ -2329,3 +2329,13 @@ System.Text.Json.JsonException: A possible object cycle was detected. This can e
 [2023-10-04 17:49:14.611 +07:00  INF]  Get All Users Starting
 [2023-10-04 17:49:14.613 +07:00  INF]  HTTP GET /api/v1/User/GetAll responded 200 in 3.2375 ms
 [2023-10-04 17:49:17.565 +07:00  INF]  HTTP GET /api/v1/User/GetById responded 400 in 1.2416 ms
+[2023-10-04 17:50:07.121 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-04 17:50:07.502 +07:00  INF]  Get  Users  By ID Starting
+[2023-10-04 17:50:08.778 +07:00  INF]  HTTP GET /api/v1/User/GetById responded 200 in 1660.2352 ms
+[2023-10-04 17:50:45.213 +07:00  INF]  HTTP PUT /api/v1/Supplier/Update responded 401 in 5.2598 ms
+[2023-10-04 17:50:53.503 +07:00  INF]  HTTP PUT /api/v1/Supplier/Update responded 401 in 2.9578 ms
+[2023-10-04 17:51:14.461 +07:00  INF]  Update supplier starting
+[2023-10-04 17:51:14.589 +07:00  INF]  HTTP PUT /api/v1/Supplier/Update responded 200 in 157.7901 ms
+[2023-10-04 17:51:19.470 +07:00  INF]  HTTP GET /api/v1/Supplier/GetAll responded 401 in 0.4090 ms
+[2023-10-04 17:51:23.712 +07:00  INF]  Get All Suppliers Starting
+[2023-10-04 17:51:23.754 +07:00  INF]  HTTP GET /api/v1/Supplier/GetAll responded 200 in 48.1236 ms

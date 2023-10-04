@@ -81,20 +81,29 @@ namespace Movie_Server.Container  {
             return _response;
        } 
        public  async Task<ApiResponse> updateSupplierInfo (SupplierUpdateModel supplier, string id) {
-          _logger.LogInformation("Update supplier starting");
+            _logger.LogInformation("Update supplier starting");
             ApiResponse _response = new ApiResponse(); 
           try{
                 bool isValidPhoneNumber = Regex.IsMatch(supplier.SlPhone, @"^[0-9]{10}$");
-                var SupplierInfo =  await this._context.Suppliers.FindAsync(id);
+                bool isEmilValid = Regex.IsMatch(supplier.SlEmail, @"^[a-zA-Z0-9._%+-]+@gmail\.com$");
+                var _supplier =  await this._context.Suppliers.FindAsync(id);
                 if(isValidPhoneNumber == false) {
                     _response.responseCode = 400;
                     _response.responseMessage = "Phone number is not valid";
                    return _response; 
                 }
-                else if (SupplierInfo != null){
-                    Supplier _supplier = _mapper.Map<SupplierUpdateModel, Supplier>(supplier);
+                else if(isEmilValid == false){
+                    _response.responseCode = 400;
+                    _response.responseMessage = "Email is not valid";
+                    return _response;
+                }
+                else if (_supplier != null){
+                    _supplier.SlName = supplier.SlName;
+                    _supplier.SlPhone = supplier.SlPhone;
+                    _supplier.SlEmail = supplier.SlEmail;
+                    _supplier.SlAddress = supplier.SlAddress; 
                     await this._context.SaveChangesAsync();
-                    _response.responseCode = 200;
+                    _response.responseCode = 201;
                     _response.responseMessage = "Update Successfully";
                     _response.data = null;
                     return _response;
@@ -103,7 +112,6 @@ namespace Movie_Server.Container  {
                 _response.responseCode = 500;
                 _response.responseMessage = ex.Message;
                 _response.data = null;
-
           }
           return _response;
        }
