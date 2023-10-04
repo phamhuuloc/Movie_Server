@@ -77,6 +77,9 @@ namespace Movie_Server.Helper {
                 dest => dest.SlName, 
                 opt => opt.MapFrom(src => src.SlName)
             ).ForMember(
+                dest => dest.SlEmail, 
+                opt => opt.MapFrom(src => src.SlPhone)
+            ).ForMember(
                 dest => dest.SlPhone, 
                 opt => opt.MapFrom(src => src.SlPhone)
             ).ForMember(
