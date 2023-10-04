@@ -13,5 +13,7 @@ public partial class Category
 
     public DateTime CreateAt { get; set; }
 
-    public virtual ICollection<MovieCategoty> MovieCategoties { get; set; } = new List<MovieCategoty>();
+    public bool? IsActive { get; set; }
+
+    public virtual ICollection<MovieCategory> MovieCategories { get; set; } = new List<MovieCategory>();
 }

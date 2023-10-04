@@ -34,11 +34,11 @@ builder.Services.AddRateLimiter(options => {
        opt.QueueProcessingOrder = System.Threading.RateLimiting.QueueProcessingOrder.OldestFirst;
     });
 });
-// connection string used for the database
 builder.Services.AddTransient<IUserServices,UserServices> ();
 builder.Services.AddTransient<IAuthorizeServices,AuthorizeServices> ();
 builder.Services.AddTransient<ISupplierServices,SupplierServices> ();
 builder.Services.AddTransient<IMovieServices,MovieServices> ();
+builder.Services.AddTransient<IVoucherServices,VoucherServices> ();
 
 var connectionString = builder.Configuration.GetConnectionString("Movie_Server");
 builder.Services.AddDbContext<MovieserverContext>(options => {

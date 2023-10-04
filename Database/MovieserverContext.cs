@@ -23,7 +23,7 @@ public partial class MovieserverContext : DbContext
 
     public virtual DbSet<Movie> Movies { get; set; }
 
-    public virtual DbSet<MovieCategoty> MovieCategoties { get; set; }
+    public virtual DbSet<MovieCategory> MovieCategories { get; set; }
 
     public virtual DbSet<Rating> Ratings { get; set; }
 
@@ -70,6 +70,10 @@ public partial class MovieserverContext : DbContext
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("create_at");
+            entity.Property(e => e.IsActive)
+                .IsRequired()
+                .HasDefaultValueSql("'1'")
+                .HasColumnName("isActive");
         });
 
         modelBuilder.Entity<List>(entity =>
@@ -154,6 +158,10 @@ public partial class MovieserverContext : DbContext
             entity.Property(e => e.ImgSm)
                 .HasColumnType("text")
                 .HasColumnName("imgSm");
+            entity.Property(e => e.IsActive)
+                .IsRequired()
+                .HasDefaultValueSql("'1'")
+                .HasColumnName("isActive");
             entity.Property(e => e.IsSeries)
                 .HasDefaultValueSql("'0'")
                 .HasColumnName("isSeries");
@@ -178,11 +186,11 @@ public partial class MovieserverContext : DbContext
                 .HasConstraintName("movie_ibfk_1");
         });
 
-        modelBuilder.Entity<MovieCategoty>(entity =>
+        modelBuilder.Entity<MovieCategory>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
-            entity.ToTable("movie_categoties");
+            entity.ToTable("movie_categories");
 
             entity.HasIndex(e => e.MvCateId, "mv_cate_id");
 
@@ -202,13 +210,13 @@ public partial class MovieserverContext : DbContext
                 .HasMaxLength(500)
                 .HasColumnName("mv_movie_id");
 
-            entity.HasOne(d => d.MvCate).WithMany(p => p.MovieCategoties)
+            entity.HasOne(d => d.MvCate).WithMany(p => p.MovieCategories)
                 .HasForeignKey(d => d.MvCateId)
-                .HasConstraintName("movie_categoties_ibfk_2");
+                .HasConstraintName("movie_categories_ibfk_2");
 
-            entity.HasOne(d => d.MvMovie).WithMany(p => p.MovieCategoties)
+            entity.HasOne(d => d.MvMovie).WithMany(p => p.MovieCategories)
                 .HasForeignKey(d => d.MvMovieId)
-                .HasConstraintName("movie_categoties_ibfk_1");
+                .HasConstraintName("movie_categories_ibfk_1");
         });
 
         modelBuilder.Entity<Rating>(entity =>
@@ -281,6 +289,10 @@ public partial class MovieserverContext : DbContext
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("create_at");
+            entity.Property(e => e.IsActive)
+                .IsRequired()
+                .HasDefaultValueSql("'1'")
+                .HasColumnName("isActive");
             entity.Property(e => e.SlAddress)
                 .HasColumnType("text")
                 .HasColumnName("sl_address");
@@ -502,6 +514,10 @@ public partial class MovieserverContext : DbContext
             entity.Property(e => e.Image)
                 .HasColumnType("text")
                 .HasColumnName("image");
+            entity.Property(e => e.IsActive)
+                .IsRequired()
+                .HasDefaultValueSql("'1'")
+                .HasColumnName("isActive");
             entity.Property(e => e.PercentDiscount).HasColumnName("percent_discount");
             entity.Property(e => e.PointCost)
                 .HasDefaultValueSql("'0'")

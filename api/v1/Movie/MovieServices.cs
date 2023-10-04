@@ -62,11 +62,12 @@ namespace Movie_Server.Container {
                             ratingTime = rating.CreateAt
                        };
             // get atribute of movie
-            var getAttributeOfMovie =  from  _movieCategoties  in _context.MovieCategoties
-                                       join categories in _context.Categories on _movieCategoties.MvCateId equals categories.Id
-                                       where _movieCategoties.MvMovieId == id
+            var getAttributeOfMovie =  from  _movieCategories  in _context.MovieCategories
+                                       join categories in _context.Categories on _movieCategories.MvCateId equals categories.Id
+                                       where _movieCategories.MvMovieId == id
                                        select new {
-                                           categoriesName = categories.CateName
+                                           categoriesName = categories.CateName,
+                                           isActive = categories.IsActive
                                        };
             // Execute query to get information
             var ratingsOfMovie = await getRatings.ToListAsync();
