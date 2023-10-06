@@ -11,7 +11,7 @@ public partial class List
 
     public string Type { get; set; } = null!;
 
-    public string Genre { get; set; } = null!;
+    public string Description { get; set; } = null!;
 
     public DateTime CreateAt { get; set; }
 

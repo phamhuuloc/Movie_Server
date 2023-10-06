@@ -89,9 +89,9 @@ public partial class MovieserverContext : DbContext
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("create_at");
-            entity.Property(e => e.Genre)
-                .HasMaxLength(200)
-                .HasColumnName("genre");
+            entity.Property(e => e.Description)
+                .HasMaxLength(500)
+                .HasColumnName("description");
             entity.Property(e => e.Title)
                 .HasColumnType("text")
                 .HasColumnName("title");

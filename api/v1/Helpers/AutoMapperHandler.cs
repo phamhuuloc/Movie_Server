@@ -149,8 +149,18 @@ namespace Movie_Server.Helper {
                 opt => opt.MapFrom(src => src.IsActive)
             );
  
-
-            
+            CreateMap<List, ListModel>();
+            CreateMap<ListMovieCreateModel, List>()
+            .ForMember(
+                dest => dest.Title, 
+                opt => opt.MapFrom(src => src.Title)
+            ).ForMember(
+                dest => dest.Type, 
+                opt => opt.MapFrom(src => src.Type)
+            ).ForMember(
+                dest => dest.Description, 
+                opt => opt.MapFrom(src => src.Description)
+            );           
        }
     }
 }
