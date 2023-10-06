@@ -54,6 +54,9 @@ namespace Movie_Server.Helper {
                 dest => dest.IsActive,
                 opt => opt.MapFrom(src => src.IsActive)
             );
+
+        CreateMap<Supplier, SupplierModel>() ;
+
         CreateMap<SupplierCreateModel, Supplier>()
             .ForMember(
                 dest => dest.SlName, 
@@ -74,12 +77,90 @@ namespace Movie_Server.Helper {
                 dest => dest.SlName, 
                 opt => opt.MapFrom(src => src.SlName)
             ).ForMember(
+                dest => dest.SlEmail, 
+                opt => opt.MapFrom(src => src.SlPhone)
+            ).ForMember(
                 dest => dest.SlPhone, 
                 opt => opt.MapFrom(src => src.SlPhone)
             ).ForMember(
                 dest => dest.SlAddress,
                 opt => opt.MapFrom(src => src.SlAddress)
             );
+        CreateMap<Movie , MovieModel>() ;
+        CreateMap<MovieModel , Movie>()
+            .ForMember(
+                dest => dest.SupplierId,
+                opt => opt.MapFrom(src => src.SupplierId)
+            ).ForMember(
+                dest => dest.Title,
+                opt => opt.MapFrom(src => src.Title)
+            ).ForMember(
+                dest => dest.Desc,
+                opt => opt.MapFrom(src => src.Desc)
+            ).ForMember(
+                dest => dest.Img,
+                opt => opt.MapFrom(src => src.Img)
+            ).ForMember(
+                dest => dest.ImgSm,
+                opt => opt.MapFrom(src => src.ImgSm)
+            ).ForMember(
+                dest => dest.Trailer,
+                opt => opt.MapFrom(src => src.Trailer)
+            ).ForMember(
+                dest => dest.Video,
+                opt => opt.MapFrom(src => src.Video)
+            ).ForMember(
+                dest => dest.Year,
+                opt => opt.MapFrom(src => src.Year)
+            ).ForMember(
+                dest => dest.Limit,
+                opt => opt.MapFrom(src => src.Limit)
+            ).ForMember(
+                dest => dest.Price,
+                opt => opt.MapFrom(src => src.Price)
+            ).ForMember(
+                dest => dest.Clicked,
+                opt => opt.MapFrom(src => src.Clicked)
+            ).ForMember(
+                dest => dest.IsSeries,
+                opt => opt.MapFrom(src => src.IsSeries)
+            );
+
+
+            CreateMap<Voucher, VoucherModel>();
+            CreateMap<VoucherModel, Voucher>()
+            .ForMember(
+                dest => dest.Image, 
+                opt => opt.MapFrom(src => src.Image)
+            ).ForMember(
+                dest => dest.SupplierName, 
+                opt => opt.MapFrom(src => src.SupplierName)
+            ).ForMember(
+                dest => dest.PercentDiscount, 
+                opt => opt.MapFrom(src => src.PercentDiscount)
+            ).ForMember(
+                dest => dest.Description,
+                opt => opt.MapFrom(src => src.Description)
+            ).ForMember(
+                dest => dest.PointCost,
+                opt => opt.MapFrom(src => src.PointCost)
+            ).ForMember(
+                dest => dest.IsActive,
+                opt => opt.MapFrom(src => src.IsActive)
+            );
+ 
+            CreateMap<List, ListModel>();
+            CreateMap<ListMovieCreateModel, List>()
+            .ForMember(
+                dest => dest.Title, 
+                opt => opt.MapFrom(src => src.Title)
+            ).ForMember(
+                dest => dest.Type, 
+                opt => opt.MapFrom(src => src.Type)
+            ).ForMember(
+                dest => dest.Description, 
+                opt => opt.MapFrom(src => src.Description)
+            );           
        }
     }
 }

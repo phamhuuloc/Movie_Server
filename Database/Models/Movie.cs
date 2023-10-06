@@ -33,9 +33,11 @@ public partial class Movie
 
     public DateTime CreateAt { get; set; }
 
+    public bool? IsActive { get; set; }
+
     public virtual ICollection<ListMovie> ListMovies { get; set; } = new List<ListMovie>();
 
-    public virtual ICollection<MovieCategoty> MovieCategoties { get; set; } = new List<MovieCategoty>();
+    public virtual ICollection<MovieCategory> MovieCategories { get; set; } = new List<MovieCategory>();
 
     public virtual ICollection<Rating> Ratings { get; set; } = new List<Rating>();
 

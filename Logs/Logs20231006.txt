@@ -1,0 +1,27 @@
+[2023-10-06 10:12:00.324 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-06 10:12:02.756 +07:00  INF]  User Information: d88bf737-e981-415b-8894-fbd77072fde0
+[2023-10-06 10:12:03.174 +07:00  INF]  HTTP POST /login responded 200 in 2854.8327 ms
+[2023-10-06 10:12:17.911 +07:00  INF]  Get Voucher By ID
+[2023-10-06 10:12:18.011 +07:00  INF]  HTTP GET /api/v1/Voucher/GetById responded 200 in 122.6466 ms
+[2023-10-06 10:14:33.031 +07:00  INF]  HTTP POST /api/v1/ListMovie/Create responded 200 in 285.9895 ms
+[2023-10-06 10:44:22.091 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-06 10:44:24.047 +07:00  INF]  HTTP PUT /api/v1/ListMovie/update responded 200 in 1957.9955 ms
+[2023-10-06 11:12:49.622 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-06 11:12:49.661 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetAll responded 401 in 43.3441 ms
+[2023-10-06 11:12:58.547 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetAll responded 200 in 1243.5974 ms
+[2023-10-06 15:51:18.620 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-06 15:51:18.660 +07:00  INF]  HTTP GET /api/v1/ListMovie/Delete responded 405 in 41.3425 ms
+[2023-10-06 15:52:45.746 +07:00  INF]  User Information: d88bf737-e981-415b-8894-fbd77072fde0
+[2023-10-06 15:52:45.768 +07:00  INF]  HTTP POST /login responded 200 in 2979.2870 ms
+[2023-10-06 15:52:59.252 +07:00  INF]  HTTP DELETE /api/v1/ListMovie/Delete responded 200 in 226.5963 ms
+[2023-10-06 15:53:08.556 +07:00  INF]  HTTP POST /api/v1/ListMovie/Create responded 200 in 201.7879 ms
+[2023-10-06 15:53:15.674 +07:00  INF]  Get All List Movie Starting
+[2023-10-06 15:53:15.705 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetAll responded 200 in 55.4119 ms
+[2023-10-06 15:54:10.821 +07:00  INF]  HTTP GET /api/v1/Movie/GetAll responded 401 in 7.6179 ms
+[2023-10-06 15:54:16.587 +07:00  INF]  Get All Movies Starting
+[2023-10-06 15:54:16.700 +07:00  INF]  HTTP GET /api/v1/Movie/GetAll responded 200 in 123.5005 ms
+[2023-10-06 15:54:39.787 +07:00  INF]  Get All List Movie Starting
+[2023-10-06 15:54:39.790 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetAll responded 200 in 4.6548 ms
+[2023-10-06 15:58:06.827 +07:00  INF]  Get All List Movie Starting
+[2023-10-06 15:58:06.841 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetAll responded 200 in 42.7591 ms
+[2023-10-06 15:58:22.619 +07:00  INF]  HTTP DELETE /api/v1/ListMovie/Delete responded 200 in 25.2483 ms
