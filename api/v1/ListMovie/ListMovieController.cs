@@ -18,7 +18,6 @@ namespace  Movie_Server.Controllers {
            var data = await this._services.getAllListMovie(); 
            return Ok(data);
         }
- 
         [HttpPost("Create")]
         public async Task<IActionResult> createNewListMovie(ListMovieCreateModel listMovie) {
            var data = await this._services.createNewListMovie(listMovie); 
@@ -28,6 +27,11 @@ namespace  Movie_Server.Controllers {
         public async Task<IActionResult> updateListMovie(ListMovieCreateModel listMovie,string id) {
            var data = await this._services.updateListMovie(listMovie,id); 
            return Ok(data);
+        }
+        [HttpDelete("Delete")]
+        public async Task<IActionResult> deleteListMovie(string  id) {
+            var data = await this._services.deleteListMovie(id);
+            return Ok(data);
         }
 
     }
