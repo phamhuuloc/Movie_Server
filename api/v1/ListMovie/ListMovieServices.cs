@@ -1,4 +1,5 @@
 using AutoMapper;
+using AutoMapper.Configuration.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Movie_Server.Database.Models;
 using Movie_Server.Helper;
@@ -60,6 +61,24 @@ namespace Movie_Server.Container {
                  _logger.LogError(ex.Message , "Update List Movie Failed");
                  _response.responseCode = 500;
                  _response.responseMessage = "Update List Movie Failed";
+            }
+            return _response;
+        }
+        public async Task<ApiResponse> getAllListMovie (){
+            ApiResponse _response = new ApiResponse();
+            try{
+                var data = await this._context.Lists.ToListAsync();
+                if(data != null) {
+                    _response.responseCode = 200;
+                    _response.responseMessage = "Get All List Movie Successfully";
+                    _response.data = _mapper.Map<List<List>, List<ListModel>>(data);
+                    return _response;
+                }
+                
+            }catch(Exception ex) {
+                _logger.LogError(ex.Message, "Get All List Movie Failed");
+                _response.responseCode = 500;
+                _response.responseMessage = "Get All List Movie Failed";
             }
             return _response;
         }

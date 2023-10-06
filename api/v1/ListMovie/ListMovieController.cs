@@ -13,6 +13,12 @@ namespace  Movie_Server.Controllers {
         public ListMovieController(IListMovieServices services) {
             this._services = services;
         }
+        [HttpGet("GetAll")]
+        public async Task<IActionResult> getAllListMovie() {
+           var data = await this._services.getAllListMovie(); 
+           return Ok(data);
+        }
+ 
         [HttpPost("Create")]
         public async Task<IActionResult> createNewListMovie(ListMovieCreateModel listMovie) {
            var data = await this._services.createNewListMovie(listMovie); 
