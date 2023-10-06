@@ -39,6 +39,7 @@ builder.Services.AddTransient<IAuthorizeServices,AuthorizeServices> ();
 builder.Services.AddTransient<ISupplierServices,SupplierServices> ();
 builder.Services.AddTransient<IMovieServices,MovieServices> ();
 builder.Services.AddTransient<IVoucherServices,VoucherServices> ();
+builder.Services.AddTransient<IListMovieServices,ListMovieServices> ();
 
 var connectionString = builder.Configuration.GetConnectionString("Movie_Server");
 builder.Services.AddDbContext<MovieserverContext>(options => {
