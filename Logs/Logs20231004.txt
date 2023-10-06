@@ -2452,3 +2452,21 @@ System.InvalidOperationException: Multiple constructors accepting all given argu
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2023-10-04 21:51:14.697 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-04 21:51:15.187 +07:00  INF]  Create New Voucher
+[2023-10-04 21:51:16.313 +07:00  INF]  HTTP POST /api/v1/Voucher/Create responded 200 in 1623.1878 ms
+[2023-10-04 22:36:34.524 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-04 22:36:34.950 +07:00  INF]  HTTP PUT /api/v1/Voucher/Update responded 400 in 429.8530 ms
+[2023-10-04 22:37:06.493 +07:00  INF]  Update Voucher Info
+[2023-10-04 22:37:07.787 +07:00  INF]  HTTP PUT /api/v1/Voucher/Update responded 200 in 1321.4798 ms
+[2023-10-04 22:37:11.516 +07:00  INF]  Update Voucher Info
+[2023-10-04 22:37:11.586 +07:00  INF]  HTTP PUT /api/v1/Voucher/Update responded 200 in 122.4076 ms
+[2023-10-04 23:08:28.405 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-04 23:08:28.448 +07:00  INF]  HTTP GET /api/v1/Voucher/GetAll responded 405 in 47.6633 ms
+[2023-10-04 23:08:39.209 +07:00  INF]  HTTP GET /api/v1/Voucher/GetAll responded 405 in 0.6733 ms
+[2023-10-04 23:08:59.874 +07:00  INF]  HTTP GET /api/v1/Voucher/GetAll responded 405 in 0.2270 ms
+[2023-10-04 23:09:05.973 +07:00  INF]  HTTP GET /api/v1/Voucher/GetAll responded 405 in 0.0471 ms
+[2023-10-04 23:09:43.100 +07:00  INF]  Get All Movies Starting
+[2023-10-04 23:09:44.232 +07:00  INF]  HTTP GET /api/v1/Movie/GetAll responded 200 in 1413.2805 ms
+[2023-10-04 23:09:52.023 +07:00  INF]  Get All Vouchers
+[2023-10-04 23:09:52.116 +07:00  INF]  HTTP GET /api/v1/Voucher/GetAll responded 200 in 105.1236 ms

@@ -1,0 +1,8 @@
+[2023-10-05 11:05:35.908 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-05 11:05:36.658 +07:00  INF]  Get All Vouchers
+[2023-10-05 11:05:39.004 +07:00  INF]  HTTP GET /api/v1/Voucher/GetAll responded 200 in 3105.7879 ms
+[2023-10-05 14:02:45.644 +07:00  INF]  HTTP GET /api/v1/Voucher/GetById responded 401 in 11.8051 ms
+[2023-10-05 14:02:53.801 +07:00  INF]  User Information: d88bf737-e981-415b-8894-fbd77072fde0
+[2023-10-05 14:02:53.828 +07:00  INF]  HTTP POST /login responded 200 in 918.9014 ms
+[2023-10-05 14:03:10.452 +07:00  INF]  Get Voucher By ID
+[2023-10-05 14:03:10.592 +07:00  INF]  HTTP GET /api/v1/Voucher/GetById responded 200 in 169.0081 ms
