@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Movie_Server.Database.Models;
 using Movie_Server.Helper;
 using Movie_Server.Models;
@@ -31,6 +32,34 @@ namespace Movie_Server.Container {
                 _logger.LogError(ex.Message, "Create New List Movie Failed");
                 _response.responseCode = 500;
                 _response.responseMessage = "Create New List Movie Failed";
+            }
+            return _response;
+        }
+        public async  Task<ApiResponse> updateListMovie(ListMovieCreateModel listMovie, string id) {
+            ApiResponse _response = new ApiResponse(); 
+            try {
+                var _list = await this._context.Lists.FirstOrDefaultAsync(l => l.Id == id);
+                if(_list == null) {
+                    _response.responseCode = 404;
+                    _response.responseMessage = "List Movie Not Found";
+                    return _response;
+                }
+                else {
+                    _mapper.Map(listMovie , _list);
+                     await this._context.SaveChangesAsync();
+                    _response.responseCode = 200;
+                    _response.responseMessage = "Update List Movie Successfully";
+                    _response.data = null;
+                    return _response;
+                }
+            
+
+
+            }
+            catch (Exception ex) {
+                 _logger.LogError(ex.Message , "Update List Movie Failed");
+                 _response.responseCode = 500;
+                 _response.responseMessage = "Update List Movie Failed";
             }
             return _response;
         }

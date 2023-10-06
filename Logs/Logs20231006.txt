@@ -1,0 +1,8 @@
+[2023-10-06 10:12:00.324 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-06 10:12:02.756 +07:00  INF]  User Information: d88bf737-e981-415b-8894-fbd77072fde0
+[2023-10-06 10:12:03.174 +07:00  INF]  HTTP POST /login responded 200 in 2854.8327 ms
+[2023-10-06 10:12:17.911 +07:00  INF]  Get Voucher By ID
+[2023-10-06 10:12:18.011 +07:00  INF]  HTTP GET /api/v1/Voucher/GetById responded 200 in 122.6466 ms
+[2023-10-06 10:14:33.031 +07:00  INF]  HTTP POST /api/v1/ListMovie/Create responded 200 in 285.9895 ms
+[2023-10-06 10:44:22.091 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-06 10:44:24.047 +07:00  INF]  HTTP PUT /api/v1/ListMovie/update responded 200 in 1957.9955 ms

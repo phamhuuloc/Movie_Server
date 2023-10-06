@@ -18,5 +18,11 @@ namespace  Movie_Server.Controllers {
            var data = await this._services.createNewListMovie(listMovie); 
            return Ok(data);
         }
+        [HttpPut("Update")]
+        public async Task<IActionResult> updateListMovie(ListMovieCreateModel listMovie,string id) {
+           var data = await this._services.updateListMovie(listMovie,id); 
+           return Ok(data);
+        }
+
     }
 }
