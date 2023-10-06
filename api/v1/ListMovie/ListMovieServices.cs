@@ -64,9 +64,34 @@ namespace Movie_Server.Container {
             }
             return _response;
         }
+        public async Task<ApiResponse> deleteListMovie (string id){
+            ApiResponse  _response = new ApiResponse();
+            try{
+                var _listMovie = await this._context.Lists.FindAsync(id);
+                if(_listMovie != null) {
+                    this._context.Lists.Remove(_listMovie);
+                    this._context.SaveChanges();
+                    _response.responseCode = 200;
+                    _response.responseMessage = "Delete List Movie Successfully";
+                    _response.data = null;
+                    return _response;
+
+                }
+
+                
+
+            }catch(Exception ex) {
+                _logger.LogError(ex.Message, "Delete List Movie Failed");
+                _response.responseCode = 500;
+                _response.responseMessage = "Delete List Movie Failed";
+            }
+            return _response;
+            
+        }
         public async Task<ApiResponse> getAllListMovie (){
             ApiResponse _response = new ApiResponse();
             try{
+                _logger.LogInformation("Get All List Movie Starting");
                 var data = await this._context.Lists.ToListAsync();
                 if(data != null) {
                     _response.responseCode = 200;
