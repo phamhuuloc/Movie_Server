@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Movie_Server.Models {
     public class VoucherModel {
     
-    [Required(ErrorMessage ="Image  is required")]
+    [Required(ErrorMessage ="Image Id is required")]
     public string Image { get; set; } = null!;
 
     [Required(ErrorMessage ="Supplier Name is required")]
@@ -19,6 +19,7 @@ namespace Movie_Server.Models {
     [Required(ErrorMessage ="Point Cost is required")]
     public double? PointCost { get; set; }
     public bool? IsActive { get; set; }
+
 
 
     }

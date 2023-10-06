@@ -126,6 +126,8 @@ namespace Movie_Server.Helper {
                 opt => opt.MapFrom(src => src.IsSeries)
             );
 
+
+            CreateMap<Voucher, VoucherModel>();
             CreateMap<VoucherModel, Voucher>()
             .ForMember(
                 dest => dest.Image, 
