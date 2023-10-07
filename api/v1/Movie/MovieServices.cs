@@ -27,7 +27,7 @@ namespace Movie_Server.Container {
                if( data != null) {
                     _response.responseCode = 200;
                     _response.responseMessage  = "Get All Movies Successfully";
-                    _response.data = _mapper.Map<List<Movie> , List<MovieModel>>(data);
+                    _response.data = _mapper.Map<List<Movie> , List<MovieInfoModel>>(data);
                     return _response;
                }
             }catch(Exception ex) {
