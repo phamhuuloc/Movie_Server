@@ -13,9 +13,15 @@ namespace  Movie_Server.Controllers {
         public ListMovieController(IListMovieServices services) {
             this._services = services;
         }
+
         [HttpGet("GetAll")]
         public async Task<IActionResult> getAllListMovie() {
            var data = await this._services.getAllListMovie(); 
+           return Ok(data);
+        }
+        [HttpGet("GetById")]
+        public async Task<IActionResult> getListMovieById(string id) {
+           var data = await this._services.getListMovieById(id); 
            return Ok(data);
         }
         [HttpPost("Create")]
@@ -28,7 +34,7 @@ namespace  Movie_Server.Controllers {
            var data = await this._services.updateListMovie(listMovie,id); 
            return Ok(data);
         }
-        [HttpDelete("Delete")]
+        [HttpDelete]
         public async Task<IActionResult> deleteListMovie(string  id) {
             var data = await this._services.deleteListMovie(id);
             return Ok(data);

@@ -86,7 +86,7 @@ namespace Movie_Server.Helper {
                 dest => dest.SlAddress,
                 opt => opt.MapFrom(src => src.SlAddress)
             );
-        CreateMap<Movie , MovieModel>() ;
+        CreateMap<Movie , MovieModel>();
         CreateMap<MovieModel , Movie>()
             .ForMember(
                 dest => dest.SupplierId,

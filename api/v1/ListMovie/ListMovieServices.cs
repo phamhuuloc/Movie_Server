@@ -1,6 +1,7 @@
 using AutoMapper;
 using AutoMapper.Configuration.Annotations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Movie_Server.Database.Models;
 using Movie_Server.Helper;
 using Movie_Server.Models;
@@ -77,9 +78,6 @@ namespace Movie_Server.Container {
                     return _response;
 
                 }
-
-                
-
             }catch(Exception ex) {
                 _logger.LogError(ex.Message, "Delete List Movie Failed");
                 _response.responseCode = 500;
@@ -106,6 +104,41 @@ namespace Movie_Server.Container {
                 _response.responseMessage = "Get All List Movie Failed";
             }
             return _response;
+        }
+        public async  Task<ApiResponse> getListMovieById (string id) {
+            ApiResponse _response  = new ApiResponse();
+            try {
+                 // get list movie information by id
+                 var _listMovie = await this._context.Lists.FindAsync(id);
+                 if(_listMovie == null){
+                    _response.responseCode = 404;
+                    _response.responseMessage = "List Movie Not Found";
+                    _response.data = null;
+                    return _response;
+                 }
+                 // query string to get all movies  of list movie with id
+                 var query = from lm  in _context.ListMovies
+                            join movie  in _context.Movies on lm.LmMovieId equals movie.Id
+                            where lm.LmListId == id
+                            select new {
+                                movieInfo = _mapper.Map<Movie, MovieModel>(movie)
+                            };
+                var movies = await query.ToListAsync();
+                var ListMovieInformation = new {ListMovieInformation =_listMovie,movies};
+                _response.responseCode = 200;
+                _response.responseMessage = "Get List Movie By Id Successfully";
+                _response.data = ListMovieInformation;
+                return _response;
+
+            }catch(Exception ex) {
+                _logger.LogError(ex.Message, "Get List Movie By Id Failed");
+                _response.responseCode = 500;
+                _response.responseMessage = ex.Message;
+                // _response.responseMessage = "Get List Movie By Id Failed";
+            }
+            return _response;
+
+
         }
         
     }
