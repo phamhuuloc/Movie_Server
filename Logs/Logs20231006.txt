@@ -25,3 +25,50 @@
 [2023-10-06 15:58:06.827 +07:00  INF]  Get All List Movie Starting
 [2023-10-06 15:58:06.841 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetAll responded 200 in 42.7591 ms
 [2023-10-06 15:58:22.619 +07:00  INF]  HTTP DELETE /api/v1/ListMovie/Delete responded 200 in 25.2483 ms
+[2023-10-06 16:07:36.672 +07:00  INF]  Get All Movies Starting
+[2023-10-06 16:07:36.715 +07:00  INF]  HTTP GET /api/v1/Movie/GetAll responded 200 in 53.4118 ms
+[2023-10-06 16:08:01.533 +07:00  INF]  Get All List Movie Starting
+[2023-10-06 16:08:01.536 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetAll responded 200 in 3.9266 ms
+[2023-10-06 16:08:06.901 +07:00  INF]  HTTP POST /api/v1/ListMovie/Create responded 200 in 36.3235 ms
+[2023-10-06 16:08:11.150 +07:00  INF]  Get All List Movie Starting
+[2023-10-06 16:08:11.153 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetAll responded 200 in 3.6008 ms
+[2023-10-06 16:34:02.326 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-06 16:34:02.711 +07:00  INF]  Get All List Movie Starting
+[2023-10-06 16:34:03.785 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetAll responded 200 in 1463.3743 ms
+[2023-10-06 16:34:06.065 +07:00  INF]  Get All List Movie Starting
+[2023-10-06 16:34:06.108 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetAll responded 200 in 56.4384 ms
+[2023-10-06 16:34:15.659 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 404 in 0.3193 ms
+[2023-10-06 16:35:55.372 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 401 in 8.0925 ms
+[2023-10-06 16:36:02.071 +07:00  ERR]  Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[<>f__AnonymousType2`1[[Movie_Server.Database.Models.Movie, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Movie_Server.Models.MovieModel, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+[2023-10-06 16:36:02.073 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 444.0768 ms
+[2023-10-06 16:37:40.417 +07:00  ERR]  Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[<>f__AnonymousType2`1[[Movie_Server.Database.Models.Movie, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Movie_Server.Models.MovieModel, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+[2023-10-06 16:37:40.428 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 33.5298 ms
+[2023-10-06 16:38:49.032 +07:00  ERR]  Error mapping types.
+
+Mapping types:
+EntityQueryable`1 -> List`1
+Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[<>f__AnonymousType2`1[[Movie_Server.Database.Models.Movie, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Movie_Server.Models.MovieModel, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+[2023-10-06 16:38:49.034 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 17.1799 ms
+[2023-10-06 16:40:28.722 +07:00  ERR]  Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[<>f__AnonymousType2`1[[Movie_Server.Database.Models.Movie, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Movie_Server.Models.MovieModel, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+[2023-10-06 16:40:28.724 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 43.1558 ms
+[2023-10-06 16:41:30.854 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-06 16:41:32.884 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 2033.3010 ms
+[2023-10-06 16:46:43.423 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-06 16:46:45.238 +07:00  ERR]  Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[<>f__AnonymousType2`1[[Movie_Server.Database.Models.Movie, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Movie_Server.Models.MovieModel, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+[2023-10-06 16:46:45.283 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 1862.0914 ms

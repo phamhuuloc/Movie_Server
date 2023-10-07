@@ -1,0 +1,27 @@
+[2023-10-07 19:40:29.199 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-07 19:40:32.683 +07:00  INF]  User Information: d88bf737-e981-415b-8894-fbd77072fde0
+[2023-10-07 19:40:33.114 +07:00  INF]  HTTP POST /login responded 200 in 3925.5763 ms
+[2023-10-07 19:40:49.914 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 401 in 22.8791 ms
+[2023-10-07 19:40:56.197 +07:00  ERR]  Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[<>f__AnonymousType2`1[[Movie_Server.Database.Models.Movie, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Movie_Server.Models.MovieModel, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+[2023-10-07 19:40:56.204 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 221.8041 ms
+[2023-10-07 19:55:41.218 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-07 19:55:42.981 +07:00  ERR]  Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[<>f__AnonymousType2`1[[Movie_Server.Database.Models.Movie, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Movie_Server.Models.MovieModel, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+[2023-10-07 19:55:43.039 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 1825.2211 ms
+[2023-10-07 19:55:48.478 +07:00  ERR]  Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[<>f__AnonymousType2`1[[Movie_Server.Database.Models.Movie, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Movie_Server.Models.MovieModel, Movie_Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+[2023-10-07 19:55:48.480 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 104.4221 ms
+[2023-10-07 19:56:10.305 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-07 19:56:12.464 +07:00  INF]  User Information: d88bf737-e981-415b-8894-fbd77072fde0
+[2023-10-07 19:56:12.578 +07:00  INF]  HTTP POST /login responded 200 in 2273.7423 ms
+[2023-10-07 19:56:24.056 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 307.2577 ms

@@ -6,5 +6,7 @@ namespace Movie_Server.Services {
         Task<ApiResponse> updateListMovie(ListMovieCreateModel listMovie,string id);
         Task<ApiResponse> deleteListMovie(string id);
         Task<ApiResponse> getAllListMovie();
+        Task<ApiResponse> getListMovieById(string id);
+
     }
 }
