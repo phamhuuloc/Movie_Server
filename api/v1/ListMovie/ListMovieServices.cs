@@ -121,7 +121,7 @@ namespace Movie_Server.Container {
                             join movie  in _context.Movies on lm.LmMovieId equals movie.Id
                             where lm.LmListId == id
                             select new {
-                                movieInfo = _mapper.Map<Movie, MovieModel>(movie)
+                                movieInfo = _mapper.Map<Movie, MovieInfoModel>(movie)
                             };
                 var movies = await query.ToListAsync();
                 var ListMovieInformation = new {ListMovieInformation =_listMovie,movies};
