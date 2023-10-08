@@ -160,6 +160,15 @@ namespace Movie_Server.Helper {
             );
  
             CreateMap<List, ListModel>();
+            CreateMap<MovieListModel ,ListMovie>()
+            .ForMember(
+                dest => dest.LmListId,
+                opt => opt.MapFrom(src => src.LmListId)
+            ).ForMember(
+                dest => dest.LmMovieId,
+                opt => opt.MapFrom(src => src.LmMovieId)
+            );
+
             CreateMap<ListMovieCreateModel, List>()
             .ForMember(
                 dest => dest.Title, 
