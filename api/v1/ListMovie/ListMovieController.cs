@@ -44,6 +44,11 @@ namespace  Movie_Server.Controllers {
            var data = await this._services.addMovieIntoList(movieListModel); 
            return Ok(data);
         }
+        [HttpDelete("DeleteMovie")]
+        public async Task<IActionResult> deleteMovieFromList(string list_id, string movie_id) {
+           var data = await this._services.deleteMovieFromList(list_id , movie_id); 
+           return Ok(data);
+        }
 
 
     }
