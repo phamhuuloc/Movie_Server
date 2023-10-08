@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using AutoMapper;
 using AutoMapper.Configuration.Annotations;
 using Microsoft.EntityFrameworkCore;
@@ -158,15 +159,30 @@ namespace Movie_Server.Container {
                         _response.responseMessage = "Add Movie Successfully";
                         return _response;
                 }
-
-
-
-            }catch(Exception ex) {
+           }catch(Exception ex) {
                 _response.responseCode = 500;
                 _response.responseMessage = "Add Movie Into List Failed";
             }
             return _response;
         }
+        public async Task<ApiResponse> deleteMovieFromList (string list_id , string movie_id) {
+            ApiResponse _response = new ApiResponse();
+            try{
+                var _listMovie = await this._context.ListMovies.FirstOrDefaultAsync(lm => lm.LmListId == list_id && lm.LmMovieId == movie_id);
+                if(_listMovie != null) {
+                    this._context.ListMovies.Remove(_listMovie);
+                    this._context.SaveChanges();
+                    _response.responseCode = 200;
+                    _response.responseMessage = "Delete Movie From List Successfully";
+                    _response.data = null;
+                    return _response;
+                }
         
+            }catch(Exception ex) {
+                _response.responseCode = 500;
+                _response.responseMessage = "Delete Movie From List Failed";
+            }
+            return _response;
+        }
     }
 }
