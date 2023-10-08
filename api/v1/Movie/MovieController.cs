@@ -33,6 +33,12 @@ namespace Movie_Server.Controllers {
               var data =  await this.services.updateMovieInfo(movie,id);
               return Ok(data);
         }
+        [HttpPost("AddCategories") ]
+        public async Task<IActionResult> addCategories(MovieCategoryModel movieCategory) {
+              var data =  await this.services.addCategories( movieCategory);
+              return Ok(data);
+        }
+
 
     }
 }
