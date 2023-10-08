@@ -80,7 +80,8 @@ namespace Movie_Server.Container {
            }     
             }catch(Exception ex){
                 _response.responseCode = 500;
-                _response.responseMessage = "Get Movie By ID Failed";
+                _response.responseMessage = ex.Message;
+                // _response.responseMessage = "Get Movie By ID Failed";
 
             }
             return _response; //TODO: Add result
@@ -162,6 +163,28 @@ namespace Movie_Server.Container {
                 _logger.LogError(ex.Message, "Add Categories Failed");
                 _response.responseCode = 500;
                 _response.responseMessage = "Add Categories Failed";
+            }
+            return _response;
+        }
+        public async Task<ApiResponse> deleteCategoryFromMovie (string movie_id, string category_id) {
+            ApiResponse _response = new ApiResponse();
+            try{
+                var _movieCategories = await this._context.MovieCategories.FirstOrDefaultAsync(c => c.MvCateId == category_id && c.MvMovieId == movie_id);
+                if(_movieCategories == null){
+                    _response.responseCode = 404;
+                    _response.responseMessage = "Categories not found";
+                    return _response;
+                }
+                else {
+                    this._context.MovieCategories.Remove(_movieCategories);
+                    await this._context.SaveChangesAsync();
+                    _response.responseCode = 200;
+                    _response.responseMessage = "Delete Categories Successfully";
+                    return _response;
+                }
+            }catch(Exception ex) {
+                _response.responseCode = 500;
+                _response.responseMessage = "Delete Categories Failed";
             }
             return _response;
         }

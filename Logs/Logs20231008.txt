@@ -284,3 +284,28 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving 
 [2023-10-08 13:14:49.814 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 326.4052 ms
 [2023-10-08 13:14:56.642 +07:00  INF]  HTTP POST /api/v1/ListMovie/AddMovie responded 200 in 185.0460 ms
 [2023-10-08 13:15:01.761 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 80.6217 ms
+[2023-10-08 19:45:19.070 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-08 19:45:20.993 +07:00  INF]  HTTP DELETE /api/v1/ListMovie/DeleteMovie responded 200 in 1926.9755 ms
+[2023-10-08 19:45:35.833 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 211.8583 ms
+[2023-10-08 19:45:42.172 +07:00  INF]  HTTP POST /api/v1/ListMovie/AddMovie responded 200 in 261.5981 ms
+[2023-10-08 19:45:45.162 +07:00  INF]  HTTP GET /api/v1/ListMovie/GetById responded 200 in 107.8014 ms
+[2023-10-08 19:59:53.939 +07:00  INF]  HTTP GET /api/v1/Movie/GetById responded 401 in 22.9585 ms
+[2023-10-08 19:59:59.967 +07:00  INF]  User Information: d88bf737-e981-415b-8894-fbd77072fde0
+[2023-10-08 19:59:59.992 +07:00  INF]  HTTP POST /login responded 200 in 761.7927 ms
+[2023-10-08 20:00:17.096 +07:00  INF]  Get Movie By ID Starting
+[2023-10-08 20:00:17.115 +07:00  INF]  HTTP GET /api/v1/Movie/GetById responded 200 in 31.5634 ms
+[2023-10-08 20:00:23.618 +07:00  INF]  Get All Movies Starting
+[2023-10-08 20:00:23.661 +07:00  INF]  HTTP GET /api/v1/Movie/GetAll responded 200 in 57.0452 ms
+[2023-10-08 20:00:37.850 +07:00  INF]  Get Movie By ID Starting
+[2023-10-08 20:00:37.858 +07:00  INF]  HTTP GET /api/v1/Movie/GetById responded 200 in 9.7115 ms
+[2023-10-08 20:00:47.463 +07:00  INF]  Get All Movies Starting
+[2023-10-08 20:00:47.466 +07:00  INF]  HTTP GET /api/v1/Movie/GetAll responded 200 in 3.4718 ms
+[2023-10-08 20:07:44.453 +07:00  INF]  Get Movie By ID Starting
+[2023-10-08 20:07:44.470 +07:00  INF]  HTTP GET /api/v1/Movie/GetById responded 200 in 53.0280 ms
+[2023-10-08 20:09:49.103 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-08 20:09:50.513 +07:00  INF]  Get Movie By ID Starting
+[2023-10-08 20:09:51.940 +07:00  INF]  HTTP GET /api/v1/Movie/GetById responded 200 in 2844.2524 ms
+[2023-10-08 20:10:12.405 +07:00  INF]  Get Movie By ID Starting
+[2023-10-08 20:10:12.480 +07:00  INF]  HTTP GET /api/v1/Movie/GetById responded 200 in 81.9056 ms
+[2023-10-08 20:13:27.627 +07:00  INF]  Get Movie By ID Starting
+[2023-10-08 20:13:27.682 +07:00  INF]  HTTP GET /api/v1/Movie/GetById responded 200 in 68.3067 ms
