@@ -39,6 +39,11 @@ namespace Movie_Server.Controllers {
               return Ok(data);
         }
 
+        [HttpDelete("DeleteCategories") ]
+        public async Task<IActionResult> deleteCategories(string movie_id, string category_id ){
+              var data =  await this.services.deleteCategoryFromMovie( movie_id, category_id);
+              return Ok(data);
+        }
 
     }
 }

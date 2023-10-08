@@ -10,6 +10,7 @@ namespace Movie_Server.Services {
         Task<ApiResponse> getAllMovies();
         Task<ApiResponse> getMovieById(string id);
         Task<ApiResponse> addCategories(MovieCategoryModel movieCategory);
+        Task<ApiResponse> deleteCategoryFromMovie(string movie_id, string category_id);
 
     }
 }
