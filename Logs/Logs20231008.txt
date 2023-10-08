@@ -1,0 +1,7 @@
+[2023-10-08 09:43:56.991 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-08 09:44:03.122 +07:00  INF]  User Information: d88bf737-e981-415b-8894-fbd77072fde0
+[2023-10-08 09:44:04.155 +07:00  INF]  HTTP POST /login responded 200 in 7172.0511 ms
+[2023-10-08 09:44:34.421 +07:00  INF]  Add Categories Starting
+[2023-10-08 09:44:34.732 +07:00  INF]  HTTP POST /api/v1/Movie/AddCategories responded 200 in 349.7905 ms
+[2023-10-08 09:44:44.741 +07:00  INF]  Add Categories Starting
+[2023-10-08 09:44:44.896 +07:00  INF]  HTTP POST /api/v1/Movie/AddCategories responded 200 in 168.9296 ms

@@ -87,6 +87,7 @@ namespace Movie_Server.Helper {
                 opt => opt.MapFrom(src => src.SlAddress)
             );
         CreateMap<Movie , MovieInfoModel>();
+        
         CreateMap<MovieModel , Movie>()
             .ForMember(
                 dest => dest.SupplierId,
@@ -125,6 +126,15 @@ namespace Movie_Server.Helper {
                 dest => dest.IsSeries,
                 opt => opt.MapFrom(src => src.IsSeries)
             );
+            CreateMap<MovieCategoryModel , MovieCategory>()
+            .ForMember(
+                dest => dest.MvMovieId,
+                opt => opt.MapFrom(src => src.MvMovieId)
+            ).ForMember(
+                dest => dest.MvCateId,
+                opt => opt.MapFrom(src => src.MvCateId)
+            );
+
 
 
             CreateMap<Voucher, VoucherModel>();

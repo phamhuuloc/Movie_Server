@@ -138,6 +138,33 @@ namespace Movie_Server.Container {
             return _response;
             
         }
+        public  async Task<ApiResponse> addCategories (MovieCategoryModel movieCategory) {
+            ApiResponse _response = new ApiResponse();
+            _logger.LogInformation("Add Categories Starting");
+            try{
+                MovieCategory _movieCategories = this._mapper.Map<MovieCategoryModel, MovieCategory>(movieCategory); 
+                Boolean  isExitCategory = await this._context.MovieCategories.AnyAsync(c => c.MvCateId == movieCategory.MvCateId && c.MvMovieId == movieCategory.MvMovieId);
+                if(isExitCategory == true){
+                    _response.responseCode = 400;
+                    _response.responseMessage = "Categories already exists";
+                    return _response;
+                }
+                else {
+                        _movieCategories.Id = Guid.NewGuid().ToString();
+                        await this._context.MovieCategories.AddAsync(_movieCategories);
+                        await this._context.SaveChangesAsync();
+                        _response.responseCode = 201;
+                        _response.responseMessage = "Add Categories Successfully";
+                        return _response;
+                }
+
+            }catch(Exception ex) {
+                _logger.LogError(ex.Message, "Add Categories Failed");
+                _response.responseCode = 500;
+                _response.responseMessage = "Add Categories Failed";
+            }
+            return _response;
+        }
         
     }
 }
