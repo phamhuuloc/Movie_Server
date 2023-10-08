@@ -140,6 +140,33 @@ namespace Movie_Server.Container {
 
 
         }
+        public async Task<ApiResponse> addMovieIntoList (MovieListModel movieListModel) {
+            ApiResponse _response = new ApiResponse();
+            try{
+                ListMovie _listMovie = this._mapper.Map<MovieListModel ,ListMovie>(movieListModel); 
+                Boolean  isExitCategories = await this._context.ListMovies.AnyAsync(lm => lm.LmListId == movieListModel.LmListId && lm.LmMovieId == movieListModel.LmMovieId);
+                if(isExitCategories == true){
+                    _response.responseCode = 400;
+                    _response.responseMessage = "Movie already exists";
+                    return _response;
+                }
+                else {
+                        _listMovie.Id = Guid.NewGuid().ToString();
+                        await this._context.ListMovies.AddAsync(_listMovie);
+                        await this._context.SaveChangesAsync();
+                        _response.responseCode = 201;
+                        _response.responseMessage = "Add Movie Successfully";
+                        return _response;
+                }
+
+
+
+            }catch(Exception ex) {
+                _response.responseCode = 500;
+                _response.responseMessage = "Add Movie Into List Failed";
+            }
+            return _response;
+        }
         
     }
 }
