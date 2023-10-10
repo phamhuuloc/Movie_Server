@@ -12,16 +12,19 @@ namespace Movie_Server.Controllers {
         public MovieController(IMovieServices services) {
             this.services = services;
         }
+
         [HttpGet("GetAll") ]
         public async Task<IActionResult> getAllMovies() {
               var data =  await this.services.getAllMovies();
               return Ok(data);
         }
+
         [HttpGet("GetById") ]
         public async Task<IActionResult> getMovieById(string id) {
               var data =  await this.services.getMovieById( id);
               return Ok(data);
         }
+
         [HttpPost("Create") ]
         public async Task<IActionResult> createMovies(MovieModel movie) {
               var data =  await this.services.createNewMovie(movie);
@@ -33,6 +36,7 @@ namespace Movie_Server.Controllers {
               var data =  await this.services.updateMovieInfo(movie,id);
               return Ok(data);
         }
+
         [HttpPost("AddCategories") ]
         public async Task<IActionResult> addCategories(MovieCategoryModel movieCategory) {
               var data =  await this.services.addCategories( movieCategory);

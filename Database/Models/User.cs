@@ -31,6 +31,8 @@ public partial class User
 
     public string Role { get; set; } = null!;
 
+    public DateTime? UpdateAt { get; set; }
+
     public virtual ICollection<Rating> Ratings { get; set; } = new List<Rating>();
 
     public virtual ICollection<UserFavourite> UserFavourites { get; set; } = new List<UserFavourite>();

@@ -17,6 +17,8 @@ public partial class MovieserverContext : DbContext
 
     public virtual DbSet<Category> Categories { get; set; }
 
+    public virtual DbSet<Episode> Episodes { get; set; }
+
     public virtual DbSet<List> Lists { get; set; }
 
     public virtual DbSet<ListMovie> ListMovies { get; set; }
@@ -76,6 +78,30 @@ public partial class MovieserverContext : DbContext
                 .HasColumnName("isActive");
         });
 
+        modelBuilder.Entity<Episode>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("episodes");
+
+            entity.Property(e => e.Id)
+                .HasMaxLength(50)
+                .HasColumnName("id");
+            entity.Property(e => e.CreateAt)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
+                .HasColumnType("timestamp")
+                .HasColumnName("create_at");
+            entity.Property(e => e.EpLinkMovie)
+                .HasMaxLength(500)
+                .HasColumnName("ep_link_movie");
+            entity.Property(e => e.EpMovieId).HasColumnName("ep_movie_id");
+            entity.Property(e => e.EpNumber).HasColumnName("ep_number");
+            entity.Property(e => e.UpdateAt)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
+                .HasColumnType("timestamp")
+                .HasColumnName("update_at");
+        });
+
         modelBuilder.Entity<List>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
@@ -98,6 +124,10 @@ public partial class MovieserverContext : DbContext
             entity.Property(e => e.Type)
                 .HasMaxLength(200)
                 .HasColumnName("type");
+            entity.Property(e => e.UpdateAt)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
+                .HasColumnType("timestamp")
+                .HasColumnName("update_at");
         });
 
         modelBuilder.Entity<ListMovie>(entity =>
@@ -152,6 +182,8 @@ public partial class MovieserverContext : DbContext
             entity.Property(e => e.Desc)
                 .HasColumnType("text")
                 .HasColumnName("_desc");
+            entity.Property(e => e.Episodes).HasDefaultValueSql("'1'");
+            entity.Property(e => e.Hot).HasDefaultValueSql("'1'");
             entity.Property(e => e.Img)
                 .HasColumnType("text")
                 .HasColumnName("img");
@@ -167,15 +199,23 @@ public partial class MovieserverContext : DbContext
                 .HasColumnName("isSeries");
             entity.Property(e => e.Limit).HasColumnName("_limit");
             entity.Property(e => e.Price).HasColumnName("price");
+            entity.Property(e => e.Section).HasColumnName("section");
             entity.Property(e => e.SupplierId)
                 .HasMaxLength(50)
                 .HasColumnName("supplier_id");
             entity.Property(e => e.Title)
                 .HasColumnType("text")
                 .HasColumnName("title");
+            entity.Property(e => e.TopView)
+                .HasDefaultValueSql("'0'")
+                .HasColumnName("topView");
             entity.Property(e => e.Trailer)
                 .HasColumnType("text")
                 .HasColumnName("trailer");
+            entity.Property(e => e.UpdateAt)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
+                .HasColumnType("timestamp")
+                .HasColumnName("update_at");
             entity.Property(e => e.Video)
                 .HasColumnType("text")
                 .HasColumnName("video");
@@ -348,6 +388,10 @@ public partial class MovieserverContext : DbContext
                 .HasMaxLength(255)
                 .HasDefaultValueSql("'user'")
                 .HasColumnName("role");
+            entity.Property(e => e.UpdateAt)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
+                .HasColumnType("timestamp")
+                .HasColumnName("update_at");
             entity.Property(e => e.Username)
                 .HasMaxLength(255)
                 .HasDefaultValueSql("_utf8mb4\\'user\\'")
@@ -525,6 +569,10 @@ public partial class MovieserverContext : DbContext
             entity.Property(e => e.SupplierName)
                 .HasMaxLength(255)
                 .HasColumnName("supplier_name");
+            entity.Property(e => e.UpdateAt)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
+                .HasColumnType("timestamp")
+                .HasColumnName("update_at");
         });
 
         OnModelCreatingPartial(modelBuilder);

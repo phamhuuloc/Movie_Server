@@ -309,3 +309,15 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving 
 [2023-10-08 20:10:12.480 +07:00  INF]  HTTP GET /api/v1/Movie/GetById responded 200 in 81.9056 ms
 [2023-10-08 20:13:27.627 +07:00  INF]  Get Movie By ID Starting
 [2023-10-08 20:13:27.682 +07:00  INF]  HTTP GET /api/v1/Movie/GetById responded 200 in 68.3067 ms
+[2023-10-08 20:14:02.570 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-10-08 20:14:03.149 +07:00  INF]  Get Movie By ID Starting
+[2023-10-08 20:14:05.095 +07:00  INF]  HTTP GET /api/v1/Movie/GetById responded 200 in 2534.4772 ms
+[2023-10-08 20:15:03.769 +07:00  INF]  HTTP GET /api/v1/Movie/GetAll responded 401 in 7.9723 ms
+[2023-10-08 20:15:09.402 +07:00  INF]  Get Movie By ID Starting
+[2023-10-08 20:15:09.550 +07:00  INF]  HTTP GET /api/v1/Movie/GetById responded 200 in 159.3615 ms
+[2023-10-08 20:19:00.091 +07:00  INF]  Add Categories Starting
+[2023-10-08 20:19:00.323 +07:00  INF]  HTTP POST /api/v1/Movie/AddCategories responded 200 in 257.6989 ms
+[2023-10-08 20:19:14.344 +07:00  INF]  Get Movie By ID Starting
+[2023-10-08 20:19:14.357 +07:00  INF]  HTTP GET /api/v1/Movie/GetById responded 200 in 17.7650 ms
+[2023-10-08 20:24:42.595 +07:00  INF]  HTTP DELETE /api/v1/Movie/DeleteCategories responded 401 in 0.6390 ms
+[2023-10-08 20:25:13.980 +07:00  INF]  HTTP DELETE /api/v1/Movie/DeleteCategories responded 200 in 68.0620 ms

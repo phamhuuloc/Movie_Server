@@ -15,5 +15,7 @@ public partial class List
 
     public DateTime CreateAt { get; set; }
 
+    public DateTime? UpdateAt { get; set; }
+
     public virtual ICollection<ListMovie> ListMovies { get; set; } = new List<ListMovie>();
 }

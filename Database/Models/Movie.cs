@@ -33,7 +33,17 @@ public partial class Movie
 
     public DateTime CreateAt { get; set; }
 
+    public sbyte? TopView { get; set; }
+
     public bool? IsActive { get; set; }
+
+    public sbyte Hot { get; set; }
+
+    public sbyte? Episodes { get; set; }
+
+    public DateTime? UpdateAt { get; set; }
+
+    public int Section { get; set; }
 
     public virtual ICollection<ListMovie> ListMovies { get; set; } = new List<ListMovie>();
 

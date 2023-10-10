@@ -21,5 +21,7 @@ public partial class Voucher
 
     public bool? IsActive { get; set; }
 
+    public DateTime? UpdateAt { get; set; }
+
     public virtual ICollection<UserVoucher> UserVouchers { get; set; } = new List<UserVoucher>();
 }
