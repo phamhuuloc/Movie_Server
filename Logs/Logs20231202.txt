@@ -1,0 +1,5 @@
+[2023-12-02 00:25:02.840 +07:00  WRN]  Failed to determine the https port for redirect.
+[2023-12-02 00:25:14.578 +07:00  INF]  HTTP POST /login responded 200 in 11772.0384 ms
+[2023-12-02 00:25:36.134 +07:00  INF]  HTTP POST /login responded 200 in 2417.8879 ms
+[2023-12-02 00:25:47.502 +07:00  INF]  User Information: d88bf737-e981-415b-8894-fbd77072fde0
+[2023-12-02 00:25:48.669 +07:00  INF]  HTTP POST /login responded 200 in 2041.0125 ms
